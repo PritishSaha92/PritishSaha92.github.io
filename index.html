@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pritish Saha - AI research, reinforcement learning, efficient LLM adaptation, learned memory, and mechanistic latent-state analysis.">
+  <meta name="author" content="Pritish Saha">
+  <title>Pritish Saha</title>
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top">Pritish Saha</a>
+    <nav aria-label="Main navigation">
+      <a href="#research">Research</a>
+      <a href="#publications">Papers</a>
+      <a href="#systems">Systems</a>
+      <a href="#background">Background</a>
+      <a href="data/Pritish_CV.pdf">CV</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">IIT Kharagpur / AI research / LLM systems</p>
+        <h1>I study when model behavior is grounded in internal computation.</h1>
+        <p class="lead">
+          I am a 4th-year Dual Degree student in Manufacturing Science and Engineering at IIT Kharagpur.
+          My current work sits around reinforcement learning for reasoning models, representation-level supervision,
+          geometry-aware PEFT, learned memory, and mechanistic latent-state analysis.
+        </p>
+        <p>
+          The question I keep coming back to is simple: if an agent gets the right answer, did it use a robust
+          internal strategy or just a shortcut that happened to work? I like problems where behavior,
+          representation, and causal interventions all have to tell the same story.
+        </p>
+        <div class="hero-links" aria-label="Profile links">
+          <a href="data/Pritish_CV.pdf">CV</a>
+          <a href="mailto:pritish171@gmail.com">Email</a>
+          <a href="mailto:pritish.saha@kgpian.iitkgp.ac.in">IIT KGP mail</a>
+          <a href="https://www.linkedin.com/in/pritish-saha-436a1922a/">LinkedIn</a>
+          <a href="https://github.com/PritishSaha92">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=gmXhzpMAAAAJ&amp;hl=en">Scholar</a>
+          <a href="https://huggingface.co/Pritish92">Hugging Face</a>
+        </div>
+      </div>
+
+      <aside class="portrait-card" aria-label="Profile summary">
+        <img src="images/research/pritish-saha-formal.jpg" alt="Pritish Saha" class="portrait">
+        <div class="quick-facts">
+          <div><span>Current focus</span><strong>latent supervision for reasoning LLMs</strong></div>
+          <div><span>Research style</span><strong>mechanistic, empirical, systems-minded</strong></div>
+          <div><span>Toolkit</span><strong>PyTorch / JAX / CUDA / Triton</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-shell compact" aria-label="Research snapshot">
+      <div class="metric-grid">
+        <div class="metric"><strong>+4.70pp</strong><span>LaViDA nearest-expert gain over GRPO on MATH-500 n=8, seed 0</span></div>
+        <div class="metric"><strong>R^2=0.982</strong><span>6D Bayesian posterior decoded from transformer residual streams</span></div>
+        <div class="metric"><strong>262K</strong><span>learned memory tokens scaled with Mixture of Chapters routing</span></div>
+        <div class="metric"><strong>25-80%</strong><span>trainable parameter reduction targeted by GRIT-style PEFT</span></div>
+      </div>
+    </section>
+
+    <section id="research" class="section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Research</p>
+        <h2>Current threads</h2>
+        <p>
+          The common theme is internal structure: hidden states as belief states, LoRA updates as geometry,
+          memory as an addressable substrate, and RL as distribution shaping rather than only final-answer reward.
+        </p>
+      </div>
+
+      <article class="project-card featured">
+        <div class="project-text">
+          <div class="project-kicker">BTP / Complex Networks Research Lab, IIT Kharagpur / Prof. Pawan Goyal</div>
+          <h3>LaViDA: Latent Visitation Distribution Alignment for Mathematical Reasoning</h3>
+          <p>
+            LaViDA asks whether outcome-only GRPO leaves useful reasoning structure on the table. Correct
+            rollouts are projected through a frozen latent encoder, then aligned toward verified expert traces.
+            The current result is deliberately honest: simple nearest-expert alignment is promising under sampling,
+            while the learned chi-square critic is not yet reward-aligned.
+          </p>
+          <ul class="tight-list">
+            <li>Built Qwen2.5-Math-7B GRPO training with LoRA-r64, vLLM, FlashAttention, and single-H100 rollout scaling.</li>
+            <li>Constructed self and Oracle-augmented expert pools: 8,963 self traces plus 3,354 filtered 72B traces embedded on the 7B manifold.</li>
+            <li>D_OracleAug ties GRPO on greedy MATH-500 but improves n=8 mean correctness by +4.70pp, p=0.0069.</li>
+            <li>On the harder MATH-500 L4-5 subset, the same branch improves n=8 mean correctness by +5.77pp, p=0.0429.</li>
+            <li>Chi-square density-ratio matching was null; the post-BTP direction is CR-LaViDA, a prompt-exclusive InfoNCE reformulation.</li>
+          </ul>
+          <p class="links-line"><a href="data/BTP2_ppt.pdf">BTP slides</a></p>
+        </div>
+        <div class="result-panel" aria-label="LaViDA result summary">
+          <h4>MATH-500 n=8 mean correctness</h4>
+          <div class="bar-row"><span>A_2000 GRPO</span><div class="bar"><i style="width:74.88%"></i></div><b>74.88%</b></div>
+          <div class="bar-row"><span>D_OracleAug</span><div class="bar"><i style="width:79.57%"></i></div><b>79.57%</b></div>
+          <div class="bar-row"><span>SFT_Oracle</span><div class="bar"><i style="width:79.45%"></i></div><b>79.45%</b></div>
+          <p class="small-note">Seed-0 read: SFT wins greedy; D_OracleAug and SFT are statistically indistinguishable under n=8 sampling.</p>
+        </div>
+      </article>
+
+      <div class="project-grid two-col">
+        <article class="project-card">
+          <div class="project-kicker">Cambridge AI Safety Hub / MARS 4.0 / Prof. Fernando Rosas</div>
+          <h3>Bayesian mixed-state geometry in transformers</h3>
+          <p>
+            I study whether small causal transformers trained on hierarchical stochastic generators linearly encode
+            the exact Bayesian belief state, including slow hidden drivers and fast transducer dynamics.
+          </p>
+          <ul class="tight-list">
+            <li>Implemented hierarchical HMM/transducer processes with exact 6-state Bayesian filters.</li>
+            <li>Decoded the full 6D posterior from residual streams with R^2=0.982 and MSE=0.0043.</li>
+            <li>Used shuffle, untrained, temporal split, and subspace-overlap controls; driver/transducer separation reached z=-4.69.</li>
+          </ul>
+          <div class="figure-stack">
+            <figure class="research-figure">
+              <img src="images/research/mars-msp-vs-learned.png" alt="MSP fractal compared with learned transformer geometry">
+              <figcaption>Ground-truth mixed-state geometry vs. learned residual-stream geometry.</figcaption>
+            </figure>
+            <figure class="research-figure">
+              <img src="images/research/mars-layerwise-belief.png" alt="Layerwise belief geometry decoded from residual stream">
+              <figcaption>Layerwise probes show belief geometry becoming cleaner across depth.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-kicker">RAAPID INC / Prof. Amitava Das / first-author paper</div>
+          <h3>GRIT: geometry-aware PEFT</h3>
+          <p>
+            GRIT treats adapter updates as a geometric object rather than just a bag of low-rank parameters. It uses
+            rank-space K-FAC, Fisher-guided reprojection, dynamic rank adaptation, and high-rank-to-low-rank
+            compression to make LoRA-style updates more sample-efficient and less drift-prone.
+          </p>
+          <figure class="research-figure wide-figure">
+            <img src="images/research/grit-pipeline.png" alt="GRIT pipeline from LoRA update through K-FAC natural gradient and neural reprojection">
+            <figcaption>GRIT pipeline: estimate rank-space curvature, precondition the LoRA update, then reproject into the top Fisher eigenspace.</figcaption>
+          </figure>
+          <ul class="tight-list">
+            <li>Uses a train-high, compress-low setup: train at r=64, then ship a Fisher-compressed adapter at roughly r=12-20.</li>
+            <li>Mid-training compaction is basis change, not freezing: it preserves B@A up to a reconstruction check and only fires under conservative guards.</li>
+            <li>Authored fused Triton kernels for covariance fusion, GPU-side Cholesky inversion, and batched preconditioning.</li>
+            <li>Built a dual-stream CUDA pipeline that overlaps stale-by-one K-FAC inversion/eigendecomposition with the next training step.</li>
+            <li>Targets competitive generative/NLU performance while reducing trainable parameters by 25-80%.</li>
+          </ul>
+          <div class="figure-stack">
+            <figure class="research-figure">
+              <img src="images/research/grit-parameter-geometry.png" alt="GRIT parameter update geometry compared with LoRA">
+              <figcaption>GRIT concentrates LoRA updates into a tighter curvature-aligned subspace.</figcaption>
+            </figure>
+            <figure class="research-figure">
+              <img src="images/research/grit-layer-ablation.png" alt="GRIT layerwise parameter update ablation">
+              <figcaption>Layerwise update footprint comparison: LoRA, LoRA plus K-FAC, and GRIT.</figcaption>
+            </figure>
+          </div>
+          <p class="links-line"><a href="https://arxiv.org/abs/2601.00231">Paper</a></p>
+        </article>
+      </div>
+
+      <article class="project-card featured reverse">
+        <div class="project-text">
+          <div class="project-kicker">ICLR 2026 NFAM Workshop</div>
+          <h3>Mixture of Chapters: learned memory inside transformers</h3>
+          <p>
+            MoC adds a learned internal memory bank that transformer layers query through cross-attention. To scale
+            beyond dense memory access, the bank is partitioned into chapters and a router selects a sparse subset
+            per input sequence. The point is to give models an explicit, trainable memory substrate rather than only
+            implicit parametric storage or external text retrieval.
+          </p>
+          <ul class="tight-list">
+            <li>Scales to 262,208 learned memory tokens with 4,097 chapters and sparse top-k routing.</li>
+            <li>Outperforms iso-FLOP vanilla transformer baselines during pretraining.</li>
+            <li>Shows stronger retention under heavy instruction fine-tuning, suggesting memory can reduce interference across phases.</li>
+          </ul>
+          <p class="links-line">
+            <a href="https://arxiv.org/abs/2603.21096">Paper</a>
+            <a href="https://openreview.net/forum?id=uwnwGYICWe">OpenReview</a>
+            <a href="https://github.com/Tasmay-Tibrewal/Memory">Code</a>
+          </p>
+        </div>
+        <div class="figure-stack">
+          <figure class="research-figure"><img src="images/research/moc-architecture.jpg" alt="Mixture of Chapters architecture diagram"><figcaption>Chapter-routed memory cross-attention.</figcaption></figure>
+          <figure class="research-figure"><img src="images/research/moc-pretrain-loss.png" alt="Mixture of Chapters pretraining loss curve"><figcaption>Pretraining validation loss under iso-FLOP comparison.</figcaption></figure>
+          <figure class="research-figure"><img src="images/research/moc-ift-loss.png" alt="Instruction fine-tuning validation loss comparison"><figcaption>Instruction fine-tuning retention comparison.</figcaption></figure>
+        </div>
+      </article>
+
+      <div class="project-grid two-col">
+        <article class="project-card">
+          <div class="project-kicker">Medical LLM safety</div>
+          <h3>FROST and antidistillation</h3>
+          <p>
+            I benchmarked unsafe behavior in medical LLM settings and worked on token-level decoding defenses for
+            teacher-side antidistillation. The current direction treats defended generation as a utility-preserving
+            control problem: keep answers useful, but reduce how learnable each trace is for a black-box student.
+          </p>
+          <ul class="tight-list">
+            <li>Benchmarked MedGemma on CARES-18K with 86% attack success rate under unsafe prompt settings.</li>
+            <li>Implemented token-level decoding machinery for Fisher-geometric, KL-constrained antidistillation experiments.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-kicker">Safe Gen-AI course / IIT Kharagpur</div>
+          <h3>Safety fundamentals and assignments</h3>
+          <p>
+            I took CS60216: Safety Fundamentals of Generative AI, covering PEFT/LoRA, RLHF/DPO, jailbreaks,
+            model editing, mechanistic interpretability, scalable oversight, activation patching, watermarking,
+            and training-time alignment.
+          </p>
+          <p class="links-line"><a href="https://sites.google.com/view/safegen2026">Course page</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Publications</p>
+        <h2>Papers</h2>
+      </div>
+      <div class="paper-list">
+        <article class="paper-item">
+          <h3><a href="https://arxiv.org/abs/2603.21096">Mixture of Chapters: Scaling Learnt Memory in Transformers</a></h3>
+          <p><strong>ICLR 2026 NFAM Workshop.</strong> Co-author.</p>
+          <p>Sparse learned memory banks, chapter routing, 262K latent memory tokens, and improved retention under instruction fine-tuning.</p>
+          <p class="links-line"><a href="https://openreview.net/forum?id=uwnwGYICWe">OpenReview</a><a href="https://github.com/Tasmay-Tibrewal/Memory">Code</a></p>
+        </article>
+        <article class="paper-item">
+          <h3><a href="https://arxiv.org/abs/2601.00231">GRIT: Geometry-Aware PEFT with K-FAC Preconditioning, Fisher-Guided Reprojection, and Dynamic Rank Adaptation</a></h3>
+          <p><strong>arXiv preprint.</strong> First author.</p>
+          <p>Rank-space natural-gradient proxy for LoRA, Fisher-spectrum rank allocation, train-high/compress-low adapters, guarded compaction, and Triton/CUDA acceleration.</p>
+          <p class="links-line"><a href="https://arxiv.org/abs/2601.00231">Paper</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="systems" class="section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Systems and competitions</p>
+        <h2>Applied work</h2>
+        <p>
+          I keep these on the page because they reflect how I work: build the pipeline, make the evaluation honest,
+          then optimize the bottleneck until the system actually runs.
+        </p>
+      </div>
+      <div class="system-grid">
+        <article class="system-card">
+          <h3>GenAI analytics dashboard</h3>
+          <p class="meta">Runner-up, General Championship Data Analytics, IIT Kharagpur</p>
+          <p>Captained a full-stack NLQ analytics dashboard for Frammer AI with LangGraph, self-healing SQL, KPI labs, and Gaussian-anchored synthetic star-schema evaluation.</p>
+        </article>
+        <article class="system-card">
+          <h3><a href="https://github.com/PritishSaha92/Amazon-ML-25">Amazon ML Challenge 2025</a></h3>
+          <p class="meta">40.8 SMAPE</p>
+          <p>Stacked Qwen2.5-VL-3B SFT with LightGBM over CLIP/text features; used offline tensorization, WebDataset, 4-bit QLoRA, Pseudo-Huber loss, and monotonic constraints.</p>
+          <p class="links-line"><a href="https://github.com/PritishSaha92/Amazon-ML-25">Code</a></p>
+        </article>
+        <article class="system-card">
+          <h3><a href="https://github.com/PritishSaha92/AmEX-Spacebar-Sketchers-2025">American Express Campus Challenge</a></h3>
+          <p class="meta">National Finalist, Decision Science Track</p>
+          <p>Built a 3-stage GBDT-Transformer ranking ensemble with 3k+ leakage-free temporal features and a listwise Transformer trained on GBDT residuals; final MAP 0.59.</p>
+          <p class="links-line"><a href="https://github.com/PritishSaha92/AmEX-Spacebar-Sketchers-2025">Code</a></p>
+        </article>
+        <article class="system-card">
+          <h3>edu-LM</h3>
+          <p class="meta">Agentic multimodal study companion</p>
+          <p>Designed a compiler agent with Mistral OCR and Gemini-V, adapted LightRAG for low-latency retrieval, and assembled contextual Q&amp;A/studyboard workflows.</p>
+        </article>
+        <article class="system-card">
+          <h3><a href="https://github.com/PritishSaha92/Analytixlabs-Data-Science-Challenge">Marketing ROI optimization</a></h3>
+          <p class="meta">Analytics challenge runner-up</p>
+          <p>Forecasted GMV with XGBoost and optimized spend with SLSQP using lag-adjusted correlations and diminishing-return constraints.</p>
+          <p class="links-line"><a href="https://github.com/PritishSaha92/Analytixlabs-Data-Science-Challenge">Code</a></p>
+        </article>
+        <article class="system-card">
+          <h3><a href="https://github.com/PritishSaha92/Phase-2-Bengaluru-Mobility-Challenge-2024">Vehicle re-ID for mobility</a></h3>
+          <p class="meta">IISc Bengaluru Mobility Challenge finalist</p>
+          <p>Built a Dockerized O-D flow estimation pipeline with YOLOv10 detection, OSNet embeddings, and ChromaDB vector matching.</p>
+          <p class="links-line"><a href="https://github.com/PritishSaha92/Phase-2-Bengaluru-Mobility-Challenge-2024">Code</a></p>
+        </article>
+      </div>
+      <div class="code-links-panel" aria-label="Selected public code repositories">
+        <span>Selected public code</span>
+        <a href="https://github.com/PritishSaha92/Cerebral-Foundry">Cerebral Foundry</a>
+        <a href="https://github.com/PritishSaha92/Probe-Trigger-Steering">Probe Trigger Steering</a>
+        <a href="https://github.com/PritishSaha92/WSD-Project">WSD / MARL</a>
+        <a href="https://github.com/PritishSaha92/PaliGemma_VLM">PaliGemma VLM</a>
+        <a href="https://github.com/PritishSaha92/Generalist-Robotics-Policy">Generalist Robotics Policy</a>
+        <a href="https://github.com/PritishSaha92/NN-cpp">NN from scratch in C++</a>
+      </div>
+    </section>
+
+    <section id="background" class="section-shell split-section">
+      <div>
+        <p class="eyebrow">Background</p>
+        <h2>Education</h2>
+        <p><strong>Indian Institute of Technology, Kharagpur</strong><br>Dual Degree in Manufacturing Science and Engineering, 2022-2027.</p>
+        <p>
+          Coursework and self-study include Safety Fundamentals of Generative AI, Operations Research,
+          Probability and Statistics, Linear Algebra, Stanford CS229, Stanford CS230, LLM Agents MOOC,
+          Algozenith, and Summer Analytics.
+        </p>
+        <div class="research-note">
+          <strong>Research taste.</strong>
+          I am drawn to interactive agent learning, goal-conditioned RL, state abstractions, representation learning,
+          and multimodal agents that can transfer useful structure across settings instead of memorizing isolated tasks.
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Stack</p>
+        <h2>Tools I use</h2>
+        <div class="tag-cloud">
+          <span>Python</span><span>C/C++</span><span>CUDA</span><span>Triton</span><span>PyTorch</span><span>JAX</span><span>Penzai</span><span>Transformers</span><span>PEFT/LoRA</span><span>TRL</span><span>vLLM</span><span>FlashAttention-2</span><span>bitsandbytes</span><span>FastAPI</span><span>Docker</span><span>Linux</span><span>WebDataset</span><span>LangGraph</span><span>ChromaDB</span><span>Git</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell closing">
+      <p>
+        I am open to research collaborations around RL for reasoning, mechanistic supervision, latent-state
+        interpretability, efficient adaptation, learned memory, and agents that learn useful abstractions from
+        limited interaction.
+      </p>
+      <p class="small-note">
+        References and letters from Prof. Pawan Goyal and Prof. Amitava Das are available privately on request.
+        Outside research: Codeforces Pupil, interhall football and water polo, karate black belt, and NSS volunteering.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Last updated May 2026.</span>
+    <span><a href="mailto:pritish171@gmail.com">pritish171@gmail.com</a> / <a href="mailto:pritish.saha@kgpian.iitkgp.ac.in">pritish.saha@kgpian.iitkgp.ac.in</a> / <a href="https://github.com/PritishSaha92/PritishSaha">Source</a></span>
+  </footer>
+</body>
+</html>
+
+
