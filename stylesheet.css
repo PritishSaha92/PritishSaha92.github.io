@@ -280,6 +280,10 @@ figcaption {
   margin-bottom: 1.8rem;
 }
 
+.industry-heading {
+  max-width: 900px;
+}
+
 .project-grid,
 .system-grid,
 .paper-list,
@@ -308,6 +312,59 @@ figcaption {
   display: grid;
   gap: 1.1rem;
   margin-bottom: 1rem;
+}
+
+.axis-case-study {
+  gap: 1.4rem;
+  padding: clamp(1.25rem, 2.6vw, 2rem);
+  background:
+    radial-gradient(circle at 100% 0, rgba(49, 95, 79, 0.12), transparent 24rem),
+    var(--card);
+}
+
+.experience-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-bar h3 {
+  margin-top: 0.32rem;
+}
+
+.experience-date {
+  flex: 0 0 auto;
+  border: 1px solid rgba(179, 107, 44, 0.28);
+  border-radius: 999px;
+  padding: 0.48rem 0.8rem;
+  color: var(--clay);
+  background: rgba(179, 107, 44, 0.08);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.axis-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.lead-small {
+  color: #29251f;
+  font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+}
+
+.axis-figure {
+  background: #ffffff;
+}
+
+.axis-figure img {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
 }
 
 .project-card.featured {
@@ -399,6 +456,104 @@ figcaption {
   background: linear-gradient(90deg, var(--green), var(--amber));
 }
 
+.flow-diagram {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin: 0.4rem 0;
+}
+
+.flow-diagram span {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 82px;
+  border: 1px solid rgba(49, 95, 79, 0.24);
+  border-radius: 18px;
+  padding: 0.8rem;
+  color: #173429;
+  background: var(--green-soft);
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.flow-diagram span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.53rem;
+  width: 0.58rem;
+  height: 1px;
+  background: rgba(49, 95, 79, 0.45);
+}
+
+.axis-flow {
+  margin: 0.2rem 0 0;
+}
+
+.axis-flow span {
+  align-content: center;
+  gap: 0.25rem;
+  min-height: 104px;
+  padding-inline: 0.65rem;
+}
+
+.axis-flow b {
+  color: var(--amber);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.case-study-detail {
+  display: grid;
+  align-content: start;
+  gap: 0.38rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  background: rgba(255, 252, 246, 0.72);
+}
+
+.case-study-detail span {
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.case-study-detail strong {
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+
+.case-study-detail p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.axis-takeaway {
+  border-left: 3px solid var(--amber);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1rem 1.1rem;
+  color: #302820;
+  background: rgba(179, 107, 44, 0.09);
+}
+
+.axis-takeaway strong {
+  color: var(--clay);
+}
+
 .research-figure {
   margin: 0;
   overflow: hidden;
@@ -440,7 +595,7 @@ figcaption {
 }
 
 .system-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .tag-cloud {
@@ -513,6 +668,7 @@ figcaption {
   }
 
   .hero,
+  .axis-hero-grid,
   .project-card.featured,
   .project-card.featured.reverse,
   .two-col,
@@ -530,8 +686,17 @@ figcaption {
   }
 
   .metric-grid,
-  .system-grid {
+  .system-grid,
+  .case-study-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .flow-diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-diagram span:not(:last-child)::after {
+    display: none;
   }
 }
 
@@ -551,8 +716,14 @@ figcaption {
   }
 
   .metric-grid,
-  .system-grid {
+  .system-grid,
+  .case-study-grid {
     grid-template-columns: 1fr;
+  }
+
+  .experience-bar {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .bar-row {

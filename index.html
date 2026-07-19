@@ -215,6 +215,83 @@
       </div>
     </section>
 
+    <section id="industry" class="section-shell">
+      <div class="section-heading industry-heading">
+        <p class="eyebrow">Industry systems</p>
+        <h2>Graph analytics for onboarding-fraud detection</h2>
+        <p>
+          A production-minded, CPU-only graph pipeline built inside Axis Bank's Business Intelligence Unit:
+          from raw savings-account transfers to leak-free features, ranked review queues, and analyst-readable evidence.
+        </p>
+      </div>
+
+      <article class="project-card axis-case-study">
+        <div class="experience-bar">
+          <div>
+            <div class="project-kicker">Axis Bank / Business Intelligence Unit / Mumbai, on-site</div>
+            <h3>Data Science Intern</h3>
+          </div>
+          <div class="experience-date">May &ndash; Jul 2026</div>
+        </div>
+
+        <div class="axis-hero-grid">
+          <div class="project-text">
+            <p class="lead-small">
+              I asked whether pre-disbursal money flow could expose coordinated loan fraud that an
+              application-only scorecard cannot see. The result was an explainable precision overlay for fraud review,
+              built across 224.8 million accounts and 1.31 billion transfer edges.
+            </p>
+            <ul class="tight-list">
+              <li>Cast fraud proximity as bidirectional, three-hop, time-respecting BFS and pruned the working graph roughly 20&times; while retaining about 80% applicant coverage.</li>
+              <li>Implemented shared-mule and cash-out signals, weighted PageRank, label propagation, three-cycle motifs, and camouflage-resistant Fraudar blocks in PySpark.</li>
+              <li>Hand-rolled Bahmani <em>(2 + 2&epsilon;)</em> greedy peeling with <em>1 / log<sub>2</sub>(fan-in + 5)</em> collector weights; reliable HDFS checkpoints truncated iterative RDD lineage.</li>
+              <li>Delivered a ranked investigation queue with plain-English reasons and ring diagrams for each high-risk case.</li>
+            </ul>
+          </div>
+
+          <figure class="research-figure axis-figure">
+            <img src="images/research/axis-collector-ring.png" alt="Diagram showing a new loan applicant and a known fraud paying the same rare collector account">
+            <figcaption>A collector-ring signal: the applicant and a confirmed fraud pay the same rare account before the loan outcome is known.</figcaption>
+          </figure>
+        </div>
+
+        <div class="flow-diagram axis-flow" aria-label="Axis fraud graph pipeline">
+          <span><b>01</b> Build the monthly money-flow graph</span>
+          <span><b>02</b> Anchor every feature before disbursal</span>
+          <span><b>03</b> Traverse rare, time-valid paths</span>
+          <span><b>04</b> Score proximity, entities, and motifs</span>
+          <span><b>05</b> Rank and explain the review queue</span>
+        </div>
+
+        <div class="case-study-grid">
+          <div class="case-study-detail">
+            <span>Scale &amp; systems</span>
+            <strong>224.8M nodes &middot; 1.31B transfers</strong>
+            <p>Ran on Cloudera Spark 3.3 / Hadoop with HDFS checkpointing, hub controls, degree gates, and end-to-end QC.</p>
+          </div>
+          <div class="case-study-detail">
+            <span>Signal quality</span>
+            <strong>12.1% vs 0.155% fraud rate</strong>
+            <p>The closest one-hop band reached roughly 81&times; the book rate; the shipped queue's top 1% delivered 5.49&times; mean lift.</p>
+          </div>
+          <div class="case-study-detail">
+            <span>Validation</span>
+            <strong>Feature ceiling, not model ceiling</strong>
+            <p>A separate WOE&ndash;IRLS scorecard over a larger feature set found no reliable LOAO gain over the transparent blend.</p>
+          </div>
+        </div>
+
+        <div class="axis-takeaway">
+          <strong>The important negative result:</strong>
+          about 83% of confirmed frauds had no seed-anchored money-flow signal. The graph is therefore a
+          high-precision overlay, not a replacement for the existing behavioural model; the next gain must come
+          from new identity, device, or sourcing edges rather than a more complex ranker.
+        </div>
+
+        <p class="links-line"><a href="https://drive.google.com/file/d/1sOSdI06d-h-Mi6OKhAklsaRF8sPu17tN/view?usp=sharing">Final presentation</a></p>
+      </article>
+    </section>
+
     <section id="systems" class="section-shell">
       <div class="section-heading">
         <p class="eyebrow">Selected builds and competitions</p>
@@ -225,12 +302,6 @@
         </p>
       </div>
       <div class="system-grid">
-        <article class="system-card">
-          <h3><a href="https://drive.google.com/file/d/1sOSdI06d-h-Mi6OKhAklsaRF8sPu17tN/view?usp=sharing">Onboarding-fraud graph analytics</a></h3>
-          <p class="meta">Axis Bank BIU &middot; Data Science Internship &middot; May&ndash;Jul 2026</p>
-          <p>Built a leak-free PySpark/Hadoop pipeline over 224.8M accounts and 1.31B transfers, combining time-respecting graph proximity, camouflage-resistant dense blocks, and an explainable review queue. The strongest proximity band reached 81&times; the book fraud rate.</p>
-          <p class="links-line"><a href="https://drive.google.com/file/d/1sOSdI06d-h-Mi6OKhAklsaRF8sPu17tN/view?usp=sharing">Presentation</a></p>
-        </article>
         <article class="system-card">
           <h3><a href="https://drive.google.com/file/d/1VRiHxlmjm4wJ9ezu4tE9BwB5iGUvbngH/view?usp=sharing">GenAI analytics dashboard</a></h3>
           <p class="meta">Runner-up, General Championship Data Analytics, IIT Kharagpur</p>
