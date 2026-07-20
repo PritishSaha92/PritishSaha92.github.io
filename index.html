@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pritish Saha - AI researcher studying reinforcement learning for reasoning, learned state representations, mechanistic interpretability, efficient adaptation, and memory in neural systems.">
+  <meta name="description" content="Pritish Saha - AI researcher studying reinforcement learning for reasoning, Bayesian belief-state geometry, mechanistic interpretability, efficient adaptation, and memory in neural systems.">
   <meta name="author" content="Pritish Saha">
   <title>Pritish Saha</title>
   <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
@@ -60,7 +60,7 @@
     <section class="section-shell compact" aria-label="Research snapshot">
       <div class="metric-grid">
         <div class="metric"><strong>+4.70pp</strong><span>LaViDA nearest-expert gain over GRPO on MATH-500 n=8, seed 0</span></div>
-        <div class="metric"><strong>R&sup2; 0.982</strong><span>6D Bayesian posterior decoded from transformer residual streams</span></div>
+        <div class="metric"><strong>R&sup2; &asymp; 0.99</strong><span>input and transducer beliefs decoded from 4-layer causal transformers</span></div>
         <div class="metric"><strong>262K</strong><span>learned memory tokens scaled with Mixture of Chapters routing</span></div>
         <div class="metric"><strong>25&ndash;80%</strong><span>trainable-parameter reduction targeted by GRIT-style PEFT</span></div>
       </div>
@@ -71,8 +71,9 @@
         <p class="eyebrow">Research</p>
         <h2>Current threads</h2>
         <p>
-          My research asks how useful internal structure forms and how to intervene on it: hidden states as belief
-          states, RL as structured credit assignment, LoRA updates as geometry, and memory as an addressable substrate.
+          My research asks how useful internal structure forms and how to intervene on it: hidden states as Bayesian
+          belief states under coarse-graining, RL as structured credit assignment, LoRA updates as geometry, and
+          memory as an addressable substrate.
         </p>
       </div>
 
@@ -106,27 +107,31 @@
 
       <div class="project-grid two-col">
         <article class="project-card">
-          <div class="project-kicker">Cambridge AI Safety Hub / MARS 4.0 / Prof. Fernando Rosas</div>
-          <h3>Bayesian mixed-state geometry in transformers</h3>
+          <div class="project-kicker">MARS 4.0 / Cambridge AI Safety Hub / Prof. Fernando Rosas</div>
+          <h3>Belief-state geometry in transformer &epsilon;-transducers</h3>
+          <p class="meta">Research Fellow &middot; Dec 2025&ndash;present &middot; hybrid</p>
           <p>
-            I study whether small causal transformers trained on hierarchical stochastic generators linearly encode
-            the exact Bayesian belief state, including slow hidden drivers and fast transducer dynamics.
+            I study how a causal transformer represents the Bayesian state of an input process driving an
+            &epsilon;-transducer, and what changes when the intermediate input is hidden. Joint and output-only
+            observation make coarse-graining a controlled intervention on which latent state remains recoverable.
           </p>
           <ul class="tight-list">
-            <li>Implemented hierarchical HMM/transducer processes with exact 6-state Bayesian filters.</li>
-            <li>Decoded the full 6D posterior from residual streams with R^2=0.982 and MSE=0.0043.</li>
-            <li>Used shuffle, untrained, temporal split, and subspace-overlap controls; driver/transducer separation reached z=-4.69.</li>
+            <li>Devised hierarchical-HMM and &epsilon;-transducer pipelines with exact joint and coarse-grained Bayesian belief operators.</li>
+            <li>Probed 4-layer causal transformers: input and transducer beliefs decode linearly at R&sup2; &asymp; 0.99, while next-token loss reaches the computed entropy-rate floor.</li>
+            <li>Measured information erasure under coarse-graining: about 93% of the fully observable input belief disappears in cross-fit, while most transducer belief remains recoverable.</li>
+            <li>Used shuffle, untrained, sequence-level cross-validation, and temporal controls to separate learned geometry from probe leakage.</li>
           </ul>
           <div class="figure-stack">
             <figure class="research-figure">
-              <img src="images/research/mars-msp-vs-learned.png" alt="MSP fractal compared with learned transformer geometry">
-              <figcaption>Ground-truth mixed-state geometry vs. learned residual-stream geometry.</figcaption>
+              <img src="images/research/mars-observation-regimes.png" alt="Analytical belief manifolds under fully observed, hidden-intermediate, and output-coarse-grained regimes">
+              <figcaption>Observation changes the analytical belief geometry: the hidden-intermediate regime produces an entangled cascade.</figcaption>
             </figure>
             <figure class="research-figure">
-              <img src="images/research/mars-layerwise-belief.png" alt="Layerwise belief geometry decoded from residual stream">
-              <figcaption>Layerwise probes show belief geometry becoming cleaner across depth.</figcaption>
+              <img src="images/research/mars-probe-controls.png" alt="Transducer belief probe errors for trained, untrained, sequence cross-validation, temporal, and shuffled controls">
+              <figcaption>The trained readout survives sequence-level cross-validation; untrained, temporal, and shuffled controls break the signal.</figcaption>
             </figure>
           </div>
+          <p class="links-line"><a href="https://drive.google.com/file/d/1e1NrSwDkh5JacG8v2lmQSzG7bedZAJMd/view?usp=sharing">Project link</a></p>
         </article>
 
         <article class="project-card">
