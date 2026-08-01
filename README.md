@@ -4,7 +4,7 @@ Static research portfolio for Pritish Saha.
 
 The site is intentionally simple: plain HTML/CSS, local research images, local CV/deck PDFs, no dynamic widgets, and no build step.
 
-The July 2026 update refreshes the ongoing MARS 4.0 belief-state research and adds the Axis Bank BIU internship as a secondary industry-systems case study below the main research portfolio. The private `Axis/` and `simplexity/` working folders are not site dependencies.
+The August 2026 update sharpens the site's predictive-state research positioning and corrects the public MARS and GRIT claim language. The private `Axis/` and `simplexity/` working folders are not site dependencies.
 
 ## Local Preview
 

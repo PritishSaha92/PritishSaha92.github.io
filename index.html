@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pritish Saha - AI researcher studying reinforcement learning for reasoning, robust memory for long-horizon agents, mechanistic interpretability, efficient adaptation, and learned state representations.">
+  <meta name="description" content="Pritish Saha is a final-year IIT Kharagpur student studying reinforcement learning, predictive-state representations, reasoning-agent memory, model internals, and efficient post-training.">
   <meta name="author" content="Pritish Saha">
   <title>Pritish Saha</title>
   <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
@@ -24,21 +24,20 @@
   <main id="top">
     <section class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">IIT Kharagpur / reinforcement learning / reasoning systems</p>
-        <h1>I study how agents turn experience into reusable internal structure.</h1>
+        <p class="eyebrow">IIT Kharagpur &middot; reinforcement learning &middot; predictive state &middot; reasoning agents</p>
+        <h1>I study how learning agents represent decision-relevant state&mdash;and when that state remains sufficient for reasoning, exploration, and adaptation.</h1>
         <p class="lead">
-          I am a final-year student at IIT Kharagpur. My work spans reinforcement learning for reasoning, robust
-          memory and state compression for long-horizon agents, mechanistic interpretability, and geometry-aware adaptation.
+          I am a final-year dual-degree student at IIT Kharagpur working across reinforcement learning,
+          predictive-state representations, reasoning-agent memory, representation analysis, and efficient post-training.
         </p>
         <p>
-          The question I keep coming back to is simple: when an agent succeeds, did it preserve and use the right
-          internal state, or did a shortcut happen to work? I like problems where behavior, representation, and
-          causal interventions all have to tell the same story.
+          I am especially interested in what an agent must represent or retain to predict, explore, and act reliably
+          when observations are compressed, tasks change, or the policy itself is updated.
         </p>
         <div class="hero-links" aria-label="Profile links">
           <a href="data/Pritish_CV.pdf">CV</a>
-          <a href="mailto:pritish171@gmail.com">Email</a>
           <a href="mailto:pritish.saha@kgpian.iitkgp.ac.in">IIT KGP mail</a>
+          <a href="mailto:pritish171@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/pritish-saha-436a1922a/">LinkedIn</a>
           <a href="https://github.com/PritishSaha92">GitHub</a>
           <a href="https://x.com/PritishSaha92">X</a>
@@ -50,8 +49,8 @@
       <aside class="portrait-card" aria-label="Profile summary">
         <img src="images/research/pritish-saha-informal.jpg" alt="Pritish Saha" class="portrait">
         <div class="quick-facts">
-          <div><span>Current focus</span><strong>robust memory for evolving agents</strong></div>
-          <div><span>Research style</span><strong>mechanistic, empirical, systems-minded</strong></div>
+          <div><span>Research focus</span><strong>predictive state, reasoning, and agent memory</strong></div>
+          <div><span>Research style</span><strong>theory-guided, empirical, and systems-minded</strong></div>
           <div><span>Toolkit</span><strong>PyTorch / JAX / CUDA / Triton</strong></div>
         </div>
       </aside>
@@ -62,7 +61,7 @@
         <div class="metric"><strong>+4.70pp</strong><span>LaViDA nearest-expert gain over GRPO on MATH-500 n=8, seed 0</span></div>
         <div class="metric"><strong>R&sup2; &asymp; 0.99</strong><span>input and transducer beliefs decoded from 4-layer causal transformers</span></div>
         <div class="metric"><strong>262K</strong><span>learned memory tokens scaled with Mixture of Chapters routing</span></div>
-        <div class="metric"><strong>25&ndash;80%</strong><span>trainable-parameter reduction targeted by GRIT-style PEFT</span></div>
+        <div class="metric"><strong>26.6&ndash;80%</strong><span>smaller effective active update footprint after Fisher-guided rank selection</span></div>
       </div>
     </section>
 
@@ -71,9 +70,9 @@
         <p class="eyebrow">Research</p>
         <h2>Current threads</h2>
         <p>
-          My research asks how useful internal structure forms and survives change: hidden states as Bayesian belief
-          states under coarse-graining, RL as structured credit assignment, LoRA updates as geometry, and agent
-          memory that remains useful as policies evolve.
+          My research revolves around decision-relevant state: how transformers represent Bayesian predictive states,
+          how memory supports exploration under partial observability, how compressed state remains reliable as
+          reasoning policies evolve, and how geometric structure can make learning and post-training more efficient.
         </p>
       </div>
 
@@ -109,7 +108,7 @@
         <article class="project-card">
           <div class="project-kicker">MARS 4.0 / Cambridge AI Safety Hub / Prof. Fernando Rosas</div>
           <h3>Belief-state geometry in transformer &epsilon;-transducers</h3>
-          <p class="meta">Research Fellow &middot; Dec 2025&ndash;present &middot; hybrid</p>
+          <p class="meta">MARS 4.0 Fellow &middot; Dec 2025&ndash;present &middot; hybrid</p>
           <p>
             I study how a causal transformer represents the Bayesian state of an input process driving an
             &epsilon;-transducer, and what changes when the intermediate input is hidden. Joint and output-only
@@ -118,7 +117,7 @@
           <ul class="tight-list">
             <li>Devised hierarchical-HMM and &epsilon;-transducer pipelines with exact joint and coarse-grained Bayesian belief operators.</li>
             <li>Probed 4-layer causal transformers: input and transducer beliefs decode linearly at R&sup2; &asymp; 0.99, while next-token loss reaches the computed entropy-rate floor.</li>
-            <li>Measured information erasure under coarse-graining: about 93% of the fully observable input belief disappears in cross-fit, while most transducer belief remains recoverable.</li>
+            <li>After coarse-graining, upstream-belief linear recoverability falls from approximately R&sup2; = 0.99 to 0.02&ndash;0.05, while downstream-belief recoverability remains around R&sup2; = 0.89&ndash;0.92.</li>
             <li>Used shuffle, untrained, sequence-level cross-validation, and temporal controls to separate learned geometry from probe leakage.</li>
           </ul>
           <div class="figure-stack">
@@ -135,7 +134,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-kicker">RAAPID INC / Prof. Amitava Das / first-author paper</div>
+          <div class="project-kicker">RAAPID INC / Prof. Amitava Das / arXiv preprint &middot; first author</div>
           <h3>GRIT: geometry-aware PEFT</h3>
           <p>
             GRIT treats adapter updates as a geometric object rather than just a bag of low-rank parameters. It uses
@@ -151,7 +150,7 @@
             <li>Mid-training compaction is basis change, not freezing: it preserves B@A up to a reconstruction check and only fires under conservative guards.</li>
             <li>Authored fused Triton kernels for covariance fusion, GPU-side Cholesky inversion, and batched preconditioning.</li>
             <li>Built a dual-stream CUDA pipeline that overlaps stale-by-one K-FAC inversion/eigendecomposition with the next training step.</li>
-            <li>Targets competitive generative/NLU performance while reducing trainable parameters by 25-80%.</li>
+            <li>After Fisher-guided rank selection, projection yields a 26.6&ndash;80% smaller effective active update footprint; training tensors remain allocated at r<sub>max</sub>.</li>
           </ul>
           <div class="figure-stack">
             <figure class="research-figure">
@@ -163,7 +162,7 @@
               <figcaption>Layerwise update footprint comparison: LoRA, LoRA plus K-FAC, and GRIT.</figcaption>
             </figure>
           </div>
-          <p class="links-line"><a href="https://arxiv.org/abs/2601.00231">Paper</a></p>
+          <p class="links-line"><a href="https://arxiv.org/abs/2601.00231">Preprint</a></p>
         </article>
       </div>
 
@@ -213,7 +212,7 @@
           <h3><a href="https://arxiv.org/abs/2601.00231">GRIT: Geometry-Aware PEFT with K-FAC Preconditioning, Fisher-Guided Reprojection, and Dynamic Rank Adaptation</a></h3>
           <p><strong>arXiv preprint.</strong> First author.</p>
           <p>Rank-space natural-gradient proxy for LoRA, Fisher-spectrum rank allocation, train-high/compress-low adapters, guarded compaction, and Triton/CUDA acceleration.</p>
-          <p class="links-line"><a href="https://arxiv.org/abs/2601.00231">Paper</a></p>
+          <p class="links-line"><a href="https://arxiv.org/abs/2601.00231">Preprint</a></p>
         </article>
       </div>
     </section>
@@ -330,16 +329,16 @@
       <div>
         <p class="eyebrow">Background</p>
         <h2>Education</h2>
-        <p><strong>Indian Institute of Technology, Kharagpur</strong><br>B.Tech. (Hons.) in Manufacturing Science and Engineering and M.Tech. in Industrial Engineering and Management, 2022-2027.</p>
+        <p><strong>Indian Institute of Technology, Kharagpur</strong><br>B.Tech. (Hons.) in Manufacturing Science and Engineering and M.Tech. in Industrial Engineering and Management, 2022&ndash;2027.</p>
         <p>
           Coursework and self-study include Safety Fundamentals of Generative AI, Operations Research,
           Probability and Statistics, Linear Algebra, Stanford CS229, Stanford CS230, LLM Agents MOOC,
           Algozenith, and Summer Analytics. Selected <a href="https://github.com/PritishSaha92/SafeGenAI_Assignments">Safe Gen-AI assignments</a> are public.
         </p>
         <div class="research-note">
-          <strong>Research taste.</strong>
-          I am drawn to interactive agent learning, RL for reasoning, state abstractions, and memory systems that
-          preserve decision-relevant information as models and tasks evolve.
+          <strong>Research interests.</strong>
+          I study what an agent must represent or retain so that it can reason, explore, and act reliably as its
+          observations, tasks, or policy change.
         </div>
       </div>
       <div>
@@ -353,20 +352,20 @@
 
     <section class="section-shell closing">
       <p>
-        I am open to research collaborations around RL for reasoning, robust memory for long-horizon agents,
-        learned state representations, mechanistic supervision, efficient adaptation, and agents that preserve
-        and reuse useful structure as policies evolve.
+        I am interested in research collaborations around reinforcement learning for reasoning, predictive-state
+        representations, exploration under partial observability, reliable long-horizon memory, model internals,
+        and efficient post-training.
       </p>
       <p class="small-note">
-        References and letters from Prof. Pawan Goyal and Prof. Amitava Das are available privately on request.
+        References available on request.
         Outside research: Codeforces Pupil, interhall football and water polo, karate black belt, and NSS volunteering.
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>Last updated July 2026.</span>
-    <span><a href="mailto:pritish171@gmail.com">pritish171@gmail.com</a> / <a href="mailto:pritish.saha@kgpian.iitkgp.ac.in">pritish.saha@kgpian.iitkgp.ac.in</a> / <a href="https://x.com/PritishSaha92">X</a> / <a href="https://github.com/PritishSaha92/PritishSaha">Source</a></span>
+    <span>Last updated August 2026.</span>
+    <span><a href="mailto:pritish.saha@kgpian.iitkgp.ac.in">pritish.saha@kgpian.iitkgp.ac.in</a> / <a href="mailto:pritish171@gmail.com">pritish171@gmail.com</a> / <a href="https://x.com/PritishSaha92">X</a> / <a href="https://github.com/PritishSaha92/PritishSaha92.github.io">Source</a></span>
   </footer>
 </body>
 </html>
