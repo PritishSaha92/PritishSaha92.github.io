@@ -63,8 +63,8 @@ h4 {
 }
 
 h1 {
-  max-width: 860px;
-  font-size: clamp(2.35rem, 5.2vw, 4.6rem);
+  max-width: 760px;
+  font-size: clamp(2.55rem, 4.4vw, 4.15rem);
 }
 
 h2 {
@@ -165,16 +165,17 @@ img {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
-  gap: 2.4rem;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.6fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
   align-items: center;
-  min-height: min(860px, calc(100vh - 78px));
-  padding-top: 3rem;
+  min-height: min(760px, calc(100vh - 78px));
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .hero-copy {
   display: grid;
-  gap: 1.35rem;
+  gap: 1.15rem;
 }
 
 .eyebrow {
@@ -219,15 +220,12 @@ img {
 
 .quick-facts {
   display: grid;
-  gap: 0.7rem;
-  margin-top: 0.85rem;
+  margin: 0.35rem 0.2rem 0.15rem;
 }
 
 .quick-facts div {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 0.85rem;
-  background: rgba(255, 252, 246, 0.68);
+  border-top: 1px solid var(--line);
+  padding: 0.8rem 0.15rem 0.7rem;
 }
 
 .quick-facts span,
@@ -713,6 +711,7 @@ figcaption {
   .hero {
     min-height: auto;
     padding-top: 1.2rem;
+    padding-bottom: 2.5rem;
   }
 
   .metric-grid,
