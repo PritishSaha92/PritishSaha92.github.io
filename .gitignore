@@ -3,3 +3,10 @@ data/LOR Amitava Das.pdf
 images/Formal_Pic.jpg
 images/InFormal_Pic_3.jpg
 images/research/_grit_candidates/
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts

@@ -1,17 +1,33 @@
-# Pritish Saha Personal Website
+# Pritish Saha — Academic Homepage
 
-Static research portfolio for Pritish Saha.
+React and TypeScript research portfolio for Pritish Saha. The site uses hash-based routing so every major section has a focused page while remaining compatible with GitHub Pages.
 
-The site is intentionally simple: plain HTML/CSS, local research images, local CV/deck PDFs, no dynamic widgets, and no build step.
+## Pages
 
-The August 2026 update sharpens the site's predictive-state research positioning and corrects the public MARS and GRIT claim language. The private `Axis/` and `simplexity/` working folders are not site dependencies.
+- Home
+- Research
+- Publications
+- Experience
+- Projects
+- Background
+- CV
 
-## Local Preview
+## Local development
 
-Open `index.html` directly in a browser, or serve the folder with any static server.
+```bash
+npm install
+npm run dev
+```
 
-## Public Assets
+Run a production check with:
 
-- `data/Pritish_CV.pdf`
-- `data/BTP2_ppt.pdf`
-- `images/research/`
+```bash
+npm run build
+npm run preview
+```
+
+## Deployment
+
+Pushing `main` runs `.github/workflows/deploy.yml`, builds the Vite app, and publishes `dist/` through GitHub Pages. In the repository settings, set **Pages → Source** to **GitHub Actions**.
+
+The build copies only the public portfolio assets listed in `scripts/copy-assets.mjs`. Private research folders and the local `zuyuanzhang/` reference are not dependencies.
