@@ -11,7 +11,6 @@ function HomePage() {
           </div>
 
           <div className="hero-content">
-            <p className="eyebrow">Academic homepage</p>
             <h1 id="profile-name" className="hero-name">Pritish Saha</h1>
             <p className="hero-role">Final-year student · AI research</p>
             <p className="hero-affiliation">Indian Institute of Technology, Kharagpur</p>
