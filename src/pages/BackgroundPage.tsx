@@ -23,8 +23,8 @@ function BackgroundPage() {
           <div className="soft-panel research-note">
             <strong>Research interests</strong>
             <p>
-              I am interested in how agents represent state, learn from incomplete or adaptively collected data,
-              and stay reliable as their tasks or policies change.
+              I am interested in what agents need to represent or retain, what adaptively collected data can tell
+              us, and what remains reliable as objectives or policies change.
             </p>
           </div>
         </section>

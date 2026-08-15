@@ -47,9 +47,9 @@ export const researchFocus = [
     tags: ["RL", "reasoning", "credit assignment"],
   },
   {
-    title: "Reliable learning under policy change",
+    title: "Reliable evaluation under policy change",
     description:
-      "How to evaluate decisions honestly when the policy collecting or using the data changes over time.",
+      "What conclusions remain trustworthy when the policy collecting or using the data changes over time.",
     tags: ["policy evaluation", "adaptive data", "reliability"],
   },
 ];

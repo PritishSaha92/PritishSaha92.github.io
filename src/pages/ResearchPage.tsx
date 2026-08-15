@@ -6,8 +6,8 @@ function ResearchPage() {
     <>
       <PageHeader eyebrow="Research" title="Selected research">
         <p>
-          Across these projects, I keep asking what information a model preserves, what data from a changing
-          policy can tell us, and when we have enough to make a reliable decision.
+          Across these projects, I keep asking what information a model preserves, what its data can really tell
+          us, and what remains reliable when the objective or policy changes.
         </p>
       </PageHeader>
 

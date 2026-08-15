@@ -18,7 +18,7 @@ function HomePage() {
             <div className="hero-bio">
               <p>
                 Most of my work asks what a model has actually learned when it succeeds, what its data can really
-                tell us, and how both hold up when the policy changes.
+                tell us, and how both hold up when the objective or policy changes.
               </p>
               <p>
                 I work across reinforcement learning, reasoning, predictive representations, agent memory, model
@@ -35,7 +35,7 @@ function HomePage() {
         <div className="hero-subgrid">
           <div className="info-card">
             <div className="info-label">Current focus</div>
-            <strong>Reasoning, predictive state, and learning under policy change</strong>
+            <strong>Reasoning, predictive state, and reliable evaluation</strong>
           </div>
           <div className="info-card">
             <div className="info-label">Approach</div>
