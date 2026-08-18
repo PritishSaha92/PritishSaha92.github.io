@@ -55,7 +55,7 @@ export const researchFocus = [
 ];
 
 export const updates = [
-  { date: "Jul 2026", text: "Completed a research internship at RAAPID INC on geometry-aware adaptation." },
+  { date: "Jul 2026", text: "Completed a research internship at RAAPID INC on geometry-aware PEFT and clinical NLP." },
   { date: "May 2026", text: "Completed the main LaViDA evaluation for my bachelor thesis at IIT Kharagpur." },
   { date: "Mar 2026", text: "Mixture of Chapters accepted at the ICLR 2026 NFAM Workshop." },
   { date: "Jan 2026", text: "Released the first-author GRIT arXiv preprint." },
@@ -66,7 +66,7 @@ export const metrics = [
   { value: "+4.70pp", text: "LaViDA gain over GRPO on MATH-500, n=8" },
   { value: "R² ≈ 0.99", text: "Bayesian beliefs decoded from causal transformers" },
   { value: "262K", text: "learned memory tokens with chapter routing" },
-  { value: "26.6–80%", text: "smaller effective active update footprint after projection" },
+  { value: "32%", text: "smaller exported GRIT adapter at <0.04pp accuracy loss" },
 ];
 
 export const researchProjects: ResearchProject[] = [
@@ -115,8 +115,8 @@ export const researchProjects: ResearchProject[] = [
       "GRIT treats adapter updates as a geometric object using rank-space K-FAC, Fisher-guided reprojection, dynamic rank adaptation, and guarded high-rank-to-low-rank compression.",
     bullets: [
       "Authored fused Triton kernels for covariance fusion, GPU-side Cholesky inversion, and batched preconditioning.",
-      "Built a dual-stream CUDA pipeline that overlaps curvature work with the next training step.",
-      "Projection yields a 26.6–80% smaller effective active update footprint; training tensors remain allocated at rₘₐₓ.",
+      "Built asynchronous CUDA streams that overlap K-FAC inversions and eigensolves with training across 60+ LoRA modules.",
+      "Matched LoRA/QLoRA with 25–80% lower effective rank; exported a 32% smaller adapter at <0.04pp accuracy loss.",
     ],
     tags: ["PEFT", "optimization", "GPU systems"],
     image: "/images/research/grit-pipeline.png",
@@ -164,9 +164,9 @@ export const publications = [
     year: "2026",
     title: "GRIT: Geometry-Aware PEFT with K-FAC Preconditioning, Fisher-Guided Reprojection, and Dynamic Rank Adaptation",
     venue: "arXiv preprint",
-    role: "First author",
+    role: "Sole first author",
     description:
-      "Rank-space natural-gradient proxy for LoRA, Fisher-spectrum rank allocation, guarded compaction, and Triton/CUDA acceleration.",
+      "Rank-space natural gradients for LoRA, Fisher-spectrum rank allocation, guarded compaction, and Triton/CUDA acceleration.",
     links: [{ label: "Preprint", href: "https://arxiv.org/abs/2601.00231" }],
   },
 ];
@@ -190,7 +190,7 @@ export const experiences = [
     title: "Research Intern",
     place: "RAAPID INC · Prof. Amitava Das · Remote",
     description:
-      "Designed GRIT and built its rank-space natural-gradient, Fisher reprojection, Triton, and CUDA systems stack.",
+      "Architected GRIT and its Triton/CUDA stack, then rebuilt clinical NER evaluation and deterministic QC to 0.640 exact micro-F1 with zero subword fragments across 5,035 rows.",
   },
   {
     period: "May–Jul 2026",
