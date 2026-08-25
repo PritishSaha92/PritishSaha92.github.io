@@ -64,7 +64,7 @@ export const updates = [
 
 export const metrics = [
   { value: "+4.70pp", text: "LaViDA gain over GRPO on MATH-500, n=8" },
-  { value: "R² ≈ 0.99", text: "Bayesian beliefs decoded from causal transformers" },
+  { value: "R² ≈ 0.99", text: "regime-correct Bayesian beliefs decoded in a passive transformer pilot" },
   { value: "262K", text: "learned memory tokens with chapter routing" },
   { value: "32%", text: "smaller exported GRIT adapter at <0.04pp accuracy loss" },
 ];
@@ -89,15 +89,15 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     organization: "MARS 4.0 · Cambridge AI Safety Hub · Prof. Fernando Rosas",
-    title: "Belief-state geometry in transformer ε-transducers",
+    title: "Predictive-state geometry in transformers and RL agents",
     summary:
-      "I study how causal transformers represent the Bayesian state of an input process driving an ε-transducer, and how recoverability changes when the intermediate input is hidden.",
+      "Using analytically tractable transducer worlds, I study how models represent Bayesian predictive state and what changes when those representations are adapted for decision-making through reinforcement learning.",
     bullets: [
-      "Built hierarchical-HMM and ε-transducer pipelines with exact Bayesian belief operators.",
-      "Decoded input and transducer beliefs at R² ≈ 0.99 while loss reached the entropy-rate floor.",
-      "After coarse-graining, upstream recoverability falls to 0.02–0.05 while downstream recoverability remains 0.89–0.92.",
+      "Built hierarchical-HMM and ε-transducer environments with exact Bayesian filters and predictive geometry.",
+      "In a passive transformer pilot, decoded the observation-appropriate Bayesian belief well above shuffled and untrained controls, with predictive loss at the entropy-rate floor.",
+      "Now extending this framework to study which predictive representations remain useful under reward-driven learning and control.",
     ],
-    tags: ["predictive state", "representation analysis", "transformers"],
+    tags: ["predictive state", "partially observable RL", "representation analysis"],
     image: "/images/research/mars-observation-regimes.png",
     imageAlt: "Analytical belief manifolds under three observation regimes",
     caption: "Analytical belief geometry under fully observed and coarse-grained regimes.",
@@ -176,7 +176,8 @@ export const experiences = [
     period: "Dec 2025–Present",
     title: "MARS 4.0 Fellow",
     place: "Cambridge AI Safety Hub · Prof. Fernando Rosas · Hybrid",
-    description: "Studying Bayesian belief-state geometry and coarse-graining in transformer ε-transducers.",
+    description:
+      "Studying predictive-state geometry in transformer world models and how those representations change under reinforcement learning.",
   },
   {
     period: "Jul 2025–May 2026",
