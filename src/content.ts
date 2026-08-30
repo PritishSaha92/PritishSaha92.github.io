@@ -74,14 +74,14 @@ export const metrics = [
 
 export const researchProjects: ResearchProject[] = [
   {
-    organization: "Complex Networks Research Lab · IIT Kharagpur",
+    organization: "Complex Networks Research Group (CNeRG) · IIT Kharagpur",
     title: "LaViDA: representation-level credit for mathematical reasoning",
     summary:
       "LaViDA studies whether latent representations can provide useful credit beyond exact-match rewards in GRPO. The broader question is how a predictive signal becomes a training signal that changes the model's policy.",
     bullets: [
       "Built Qwen2.5-Math-7B GRPO training with LoRA-r64, vLLM, and FlashAttention on a single H100, using 8,963 self traces and 3,354 filtered Oracle traces.",
       "In a seed-0 comparison, the Oracle-augmented nearest-MSE arm improved n=8 mean correctness by +4.70pp over GRPO. Because its reference data and training route also differed, I treat this as an arm-level comparison rather than evidence for the objective alone.",
-      "The learned chi-square critic showed no detectable lift. This shifted the question from whether a signal predicts success to whether it survives normalization and changes the policy update.",
+      "An oracle-conditioned audit distinguished successful from unsuccessful rollouts, but the latent signal barely changed normalized credit and provided no learning signal when every sampled answer was wrong.",
     ],
     tags: ["reinforcement learning", "reasoning", "credit assignment"],
     result: [
@@ -185,7 +185,7 @@ export const experiences = [
   {
     period: "Jul 2025–May 2026",
     title: "Research Intern",
-    place: "Complex Networks Research Lab, IIT Kharagpur · Prof. Pawan Goyal",
+    place: "Complex Networks Research Group (CNeRG), IIT Kharagpur · Prof. Pawan Goyal",
     description:
       "Built and evaluated LaViDA, studying when latent representation signals translate into useful credit for GRPO-trained mathematical reasoning models.",
   },
