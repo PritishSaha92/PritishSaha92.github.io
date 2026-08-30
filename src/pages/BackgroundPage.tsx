@@ -39,9 +39,8 @@ function BackgroundPage() {
         <div>
           <SectionTitle icon="✉">Get in touch</SectionTitle>
           <p>
-            I am always glad to hear from people working on reinforcement learning for reasoning, predictive state,
-            reliable evaluation under changing policies, agent memory over long tasks, model internals, or efficient
-            adaptation.
+            I’m always happy to talk about research and am open to collaborations or research-focused roles beginning
+            in 2027. If our interests overlap, please feel free to reach out.
           </p>
           <p className="muted-text">
             References available on request. Outside research: Codeforces, football and water polo, karate, and NSS

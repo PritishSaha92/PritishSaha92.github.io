@@ -67,7 +67,7 @@ export const metrics = [
     value: "+4.70pp",
     text: "seed-0 Oracle-augmented nearest-MSE arm over GRPO (MATH-500, n=8)",
   },
-  { value: "R² ≈ 0.99", text: "regime-correct Bayesian beliefs decoded in a passive transformer pilot" },
+  { value: "R² ≈ 0.99", text: "Bayesian belief decoded from both observed streams in a passive transformer pilot" },
   { value: "262K", text: "learned memory tokens with chapter routing" },
   { value: "32%", text: "smaller exported GRIT adapter at <0.04pp accuracy loss" },
 ];
@@ -98,7 +98,7 @@ export const researchProjects: ResearchProject[] = [
     bullets: [
       "Built hierarchical-HMM and ε-transducer environments with exact Bayesian filters and predictive geometry.",
       "In a passive transformer pilot, decoded the observation-appropriate Bayesian belief well above shuffled and untrained controls, with predictive loss at the entropy-rate floor.",
-      "Now extending this framework to recurrent control, asking whether predictive state remains available and reusable as rewards and policies change.",
+      "Now extending this framework to recurrent control, asking what predictive structure RL preserves and what task-relevant information it makes easier for the policy to access and use.",
     ],
     tags: ["predictive state", "partially observable RL", "representation analysis"],
     image: "/images/research/mars-observation-regimes.png",
