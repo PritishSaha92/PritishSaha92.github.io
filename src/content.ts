@@ -43,7 +43,7 @@ export const researchFocus = [
   {
     title: "Reinforcement learning for reasoning",
     description:
-      "What outcome rewards miss, and when representation-level objectives can improve reasoning without merely narrowing behavior.",
+      "How latent signals can provide credit beyond outcome rewards, and why predictivity alone may not be enough to change a policy.",
     tags: ["RL", "reasoning", "credit assignment"],
   },
   {
@@ -63,7 +63,10 @@ export const updates = [
 ];
 
 export const metrics = [
-  { value: "+4.70pp", text: "LaViDA gain over GRPO on MATH-500, n=8" },
+  {
+    value: "+4.70pp",
+    text: "seed-0 Oracle-augmented nearest-MSE arm over GRPO (MATH-500, n=8)",
+  },
   { value: "R² ≈ 0.99", text: "regime-correct Bayesian beliefs decoded in a passive transformer pilot" },
   { value: "262K", text: "learned memory tokens with chapter routing" },
   { value: "32%", text: "smaller exported GRIT adapter at <0.04pp accuracy loss" },
@@ -72,18 +75,18 @@ export const metrics = [
 export const researchProjects: ResearchProject[] = [
   {
     organization: "Complex Networks Research Lab · IIT Kharagpur",
-    title: "LaViDA: latent supervision for mathematical reasoning",
+    title: "LaViDA: representation-level credit for mathematical reasoning",
     summary:
-      "LaViDA asks whether outcome-only GRPO leaves useful reasoning structure on the table. It aligns correct rollouts toward verified expert traces through a frozen latent encoder.",
+      "LaViDA studies whether latent representations can provide useful credit beyond exact-match rewards in GRPO. The broader question is how a predictive signal becomes a training signal that changes the model's policy.",
     bullets: [
-      "Built Qwen2.5-Math-7B GRPO training with LoRA-r64, vLLM, and FlashAttention on a single H100.",
-      "Constructed 8,963 self traces and 3,354 filtered Oracle traces on the 7B representation manifold.",
-      "Nearest-expert alignment improved n=8 mean correctness by +4.70pp; the learned chi-square critic was null.",
+      "Built Qwen2.5-Math-7B GRPO training with LoRA-r64, vLLM, and FlashAttention on a single H100, using 8,963 self traces and 3,354 filtered Oracle traces.",
+      "In a seed-0 comparison, the Oracle-augmented nearest-MSE arm improved n=8 mean correctness by +4.70pp over GRPO. Because its reference data and training route also differed, I treat this as an arm-level comparison rather than evidence for the objective alone.",
+      "The learned chi-square critic showed no detectable lift. This shifted the question from whether a signal predicts success to whether it survives normalization and changes the policy update.",
     ],
-    tags: ["reinforcement learning", "reasoning", "representation learning"],
+    tags: ["reinforcement learning", "reasoning", "credit assignment"],
     result: [
       { label: "GRPO", value: "74.88%" },
-      { label: "LaViDA", value: "79.57%" },
+      { label: "Nearest-MSE", value: "79.57%" },
     ],
     links: [{ label: "BTP slides", href: "/data/BTP2_ppt.pdf" }],
   },
@@ -95,7 +98,7 @@ export const researchProjects: ResearchProject[] = [
     bullets: [
       "Built hierarchical-HMM and ε-transducer environments with exact Bayesian filters and predictive geometry.",
       "In a passive transformer pilot, decoded the observation-appropriate Bayesian belief well above shuffled and untrained controls, with predictive loss at the entropy-rate floor.",
-      "Now extending this framework to study which predictive representations remain useful under reward-driven learning and control.",
+      "Now extending this framework to recurrent control, asking whether predictive state remains available and reusable as rewards and policies change.",
     ],
     tags: ["predictive state", "partially observable RL", "representation analysis"],
     image: "/images/research/mars-observation-regimes.png",
@@ -103,7 +106,7 @@ export const researchProjects: ResearchProject[] = [
     caption: "Analytical belief geometry under fully observed and coarse-grained regimes.",
     links: [
       {
-        label: "MARS presentation",
+        label: "Week-one MARS presentation",
         href: "https://drive.google.com/file/d/1e1NrSwDkh5JacG8v2lmQSzG7bedZAJMd/view?usp=sharing",
       },
     ],
@@ -177,14 +180,14 @@ export const experiences = [
     title: "MARS 4.0 Fellow",
     place: "Cambridge AI Safety Hub · Prof. Fernando Rosas · Hybrid",
     description:
-      "Studying predictive-state geometry in transformer world models and how those representations change under reinforcement learning.",
+      "Studying predictive-state geometry in transformer world models and whether those representations remain reusable under reinforcement learning.",
   },
   {
     period: "Jul 2025–May 2026",
     title: "Research Intern",
     place: "Complex Networks Research Lab, IIT Kharagpur · Prof. Pawan Goyal",
     description:
-      "Developed and evaluated LaViDA, a representation-level auxiliary objective for GRPO-trained mathematical reasoning models.",
+      "Built and evaluated LaViDA, studying when latent representation signals translate into useful credit for GRPO-trained mathematical reasoning models.",
   },
   {
     period: "Mar 2025–Jul 2026",
