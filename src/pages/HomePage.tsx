@@ -22,7 +22,7 @@ function HomePage() {
               </p>
               <p>
                 I work across reinforcement learning, reasoning, predictive representations, agent memory, model
-                internals, and efficient adaptation. I enjoy combining careful experiments with the systems work
+                internals, and optimization for efficient adaptation. I enjoy combining careful experiments with the systems work
                 needed to make ideas run at scale.
               </p>
             </div>

@@ -30,7 +30,7 @@ export const interests = [
   "Predictive state",
   "Agent memory",
   "Model internals",
-  "Efficient adaptation",
+  "Optimization & adaptation",
 ];
 
 export const researchFocus = [
@@ -119,7 +119,7 @@ export const researchProjects: ResearchProject[] = [
     bullets: [
       "Authored fused Triton kernels for covariance fusion, GPU-side Cholesky inversion, and batched preconditioning.",
       "Built asynchronous CUDA streams that overlap K-FAC inversions and eigensolves with training across 60+ LoRA modules.",
-      "Matched LoRA/QLoRA with 25–80% lower effective rank; exported a 32% smaller adapter at <0.04pp accuracy loss.",
+      "Matched LoRA/QLoRA with a 26.6–80% smaller effective active update footprint after Fisher-guided rank selection; exported a 32% smaller adapter with less than 0.04 percentage points of accuracy loss.",
     ],
     tags: ["PEFT", "optimization", "GPU systems"],
     image: "/images/research/grit-pipeline.png",
