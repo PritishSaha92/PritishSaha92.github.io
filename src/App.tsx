@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { type MouseEvent, useEffect, useState } from "react";
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import BackgroundPage from "./pages/BackgroundPage";
 import CvPage from "./pages/CvPage";
@@ -27,6 +27,11 @@ const pageTitles: Record<string, string> = {
   "/cv": "CV · Pritish Saha",
 };
 
+function focusMainContent(event: MouseEvent<HTMLAnchorElement>) {
+  event.preventDefault();
+  document.getElementById("main-content")?.focus();
+}
+
 function App() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +44,7 @@ function App() {
 
   return (
     <div className="site-shell">
-      <a className="skip-link" href="#main-content">
+      <a className="skip-link" href="#main-content" onClick={focusMainContent}>
         Skip to content
       </a>
 
@@ -78,7 +83,7 @@ function App() {
         </div>
       </header>
 
-      <main id="main-content" className="site-main">
+      <main id="main-content" className="site-main" tabIndex={-1}>
         <div className="container">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -106,7 +111,7 @@ function App() {
             <a href="https://github.com/PritishSaha92/PritishSaha92.github.io">Source</a>
           </div>
         </div>
-        <div className="container footer-bottom">Last updated August 2026.</div>
+        <div className="container footer-bottom">Last updated September 2026.</div>
       </footer>
     </div>
   );

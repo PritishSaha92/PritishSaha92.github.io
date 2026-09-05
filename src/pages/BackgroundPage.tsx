@@ -14,7 +14,7 @@ function BackgroundPage() {
           <h2 className="education-title">Indian Institute of Technology, Kharagpur</h2>
           <p>
             B.Tech. (Hons.) in Manufacturing Science and Engineering and M.Tech. in Industrial Engineering and
-            Management, 2022–2027.
+            Management. Expected May 2027.
           </p>
           <p className="muted-text">
             Coursework and self-study include operations research, probability and statistics, linear algebra,

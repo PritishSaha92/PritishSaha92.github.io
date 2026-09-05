@@ -67,7 +67,10 @@ export const metrics = [
     value: "+4.70pp",
     text: "seed-0 Oracle-augmented nearest-MSE arm over GRPO (MATH-500, n=8)",
   },
-  { value: "R² ≈ 0.99", text: "Bayesian belief decoded from both observed streams in a passive transformer pilot" },
+  {
+    value: "R² 0.985–0.997",
+    text: "fully observed Bayesian beliefs decoded in four-layer transformer pilots",
+  },
   { value: "262K", text: "learned memory tokens with chapter routing" },
   { value: "32%", text: "smaller exported GRIT adapter at <0.04pp accuracy loss" },
 ];
@@ -97,8 +100,8 @@ export const researchProjects: ResearchProject[] = [
       "Using analytically tractable transducer worlds, I study how models represent Bayesian predictive state and what changes when those representations are adapted for decision-making through reinforcement learning.",
     bullets: [
       "Built hierarchical-HMM and ε-transducer environments with exact Bayesian filters and predictive geometry.",
-      "In a passive transformer pilot, decoded the observation-appropriate Bayesian belief well above shuffled and untrained controls, with predictive loss at the entropy-rate floor.",
-      "Now extending this framework to recurrent control, asking what predictive structure RL preserves and what task-relevant information it makes easier for the policy to access and use.",
+      "Decoded fully observed Bayesian beliefs at R²=0.985–0.997 in four-layer transformer pilots trained for 100k updates, well above shuffled and untrained controls.",
+      "Added exact KL-regularized POMDP solvers and reward-switch assays to connect predictive representations with control under changing objectives.",
     ],
     tags: ["predictive state", "partially observable RL", "representation analysis"],
     image: "/images/research/mars-observation-regimes.png",
@@ -119,7 +122,8 @@ export const researchProjects: ResearchProject[] = [
     bullets: [
       "Authored fused Triton kernels for covariance fusion, GPU-side Cholesky inversion, and batched preconditioning.",
       "Built asynchronous CUDA streams that overlap K-FAC inversions and eigensolves with training across 60+ LoRA modules.",
-      "Matched LoRA/QLoRA with a 26.6–80% smaller effective active update footprint after Fisher-guided rank selection; exported a 32% smaller adapter with less than 0.04 percentage points of accuracy loss.",
+      "On GSM8K with Llama-3.1-8B, GRIT reached 66.19% versus 63.38% for LoRA with a 27.8% smaller effective active update footprint.",
+      "The exported adapter was 32% smaller with less than 0.04 percentage points of accuracy loss.",
     ],
     tags: ["PEFT", "optimization", "GPU systems"],
     image: "/images/research/grit-pipeline.png",
@@ -167,7 +171,7 @@ export const publications = [
     year: "2026",
     title: "GRIT: Geometry-Aware PEFT with K-FAC Preconditioning, Fisher-Guided Reprojection, and Dynamic Rank Adaptation",
     venue: "arXiv preprint",
-    role: "Sole first author",
+    role: "First author",
     description:
       "Rank-space natural gradients for LoRA, Fisher-spectrum rank allocation, guarded compaction, and Triton/CUDA acceleration.",
     links: [{ label: "Preprint", href: "https://arxiv.org/abs/2601.00231" }],
@@ -204,7 +208,7 @@ export const experiences = [
       "Built a temporally valid graph pipeline over 224.8M accounts and 1.31B transfers for explainable loan-fraud review.",
     bullets: [
       "Pruned the graph roughly 20× while retaining about 80% applicant coverage.",
-      "The closest one-hop band reached roughly 81× the portfolio fraud rate.",
+      "The review queue's top 1% achieved 5.49× mean lift across three monthly cohorts.",
       "A separate scorecard indicated a feature ceiling rather than a model ceiling.",
     ],
     links: [
@@ -219,7 +223,7 @@ export const experiences = [
 export const appliedProjects = [
   {
     title: "GenAI analytics dashboard",
-    meta: "Runner-up · General Championship Data Analytics, IIT Kharagpur",
+    meta: "3rd Place · General Championship Data Analytics, IIT Kharagpur",
     description:
       "Captained a full-stack NLQ analytics dashboard for Frammer AI with LangGraph, self-healing SQL, KPI analysis, and synthetic star-schema evaluation.",
     tags: ["LangGraph", "FastAPI", "analytics"],
@@ -253,6 +257,7 @@ export const appliedProjects = [
 export const tools = [
   "Python",
   "C/C++",
+  "SQL",
   "PyTorch",
   "JAX",
   "FSDP/DTensor",
@@ -260,6 +265,7 @@ export const tools = [
   "Triton",
   "Transformers",
   "PEFT/LoRA",
+  "bitsandbytes",
   "TRL",
   "vLLM",
   "FlashAttention-2",
@@ -270,6 +276,7 @@ export const tools = [
   "SLURM",
   "Docker",
   "Linux",
+  "Git",
   "WebDataset",
   "LangGraph",
 ];
