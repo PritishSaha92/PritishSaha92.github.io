@@ -17,13 +17,13 @@ function HomePage() {
 
             <div className="hero-bio">
               <p>
-                Most of my work asks what a model has actually learned when it succeeds, what its data can really
-                tell us, and how both hold up when the objective or policy changes.
+                Most of my work asks what a model has actually learned when it succeeds, what information it retains,
+                and how that structure can support better learning and decisions.
               </p>
               <p>
                 I work across reinforcement learning, reasoning, predictive representations, agent memory, model
-                internals, and optimization for efficient adaptation. I enjoy combining careful experiments with the systems work
-                needed to make ideas run at scale.
+                internals, and optimization for efficient learning and adaptation. I enjoy combining careful experiments
+                with the systems work needed to make ideas run at scale.
               </p>
             </div>
 
@@ -35,7 +35,7 @@ function HomePage() {
         <div className="hero-subgrid">
           <div className="info-card">
             <div className="info-label">Current focus</div>
-            <strong>Reasoning, predictive state, and reliable evaluation</strong>
+            <strong>Reasoning, predictive state, and efficient reinforcement learning</strong>
           </div>
           <div className="info-card">
             <div className="info-label">Approach</div>

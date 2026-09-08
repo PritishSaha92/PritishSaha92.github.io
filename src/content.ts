@@ -30,14 +30,14 @@ export const interests = [
   "Predictive state",
   "Agent memory",
   "Model internals",
-  "Optimization & adaptation",
+  "Efficient learning & adaptation",
 ];
 
 export const researchFocus = [
   {
     title: "State, memory, and model internals",
     description:
-      "How models encode predictive state, what memory retains, and whether compact representations remain useful as policies change.",
+      "How models encode predictive state, what memory retains, and how compact representations support reasoning and control.",
     tags: ["belief states", "representation analysis", "agent memory"],
   },
   {
@@ -47,10 +47,10 @@ export const researchFocus = [
     tags: ["RL", "reasoning", "credit assignment"],
   },
   {
-    title: "Reliable evaluation under policy change",
+    title: "Efficient learning from experience",
     description:
-      "What conclusions remain trustworthy when the policy collecting or using the data changes over time.",
-    tags: ["policy evaluation", "adaptive data", "reliability"],
+      "How off-policy agents can make better use of stored experience as their policies improve, especially when interaction or training is expensive.",
+    tags: ["off-policy RL", "experience reuse", "sample efficiency"],
   },
 ];
 

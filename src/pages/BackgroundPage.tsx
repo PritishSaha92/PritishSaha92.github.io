@@ -23,8 +23,8 @@ function BackgroundPage() {
           <div className="soft-panel research-note">
             <strong>Research interests</strong>
             <p>
-              I am interested in what agents need to represent or retain, what adaptively collected data can tell
-              us, and what remains reliable as objectives or policies change.
+              I am interested in what agents need to represent or retain, how they can learn more from limited
+              experience, and how those choices shape reasoning and control.
             </p>
           </div>
         </section>
