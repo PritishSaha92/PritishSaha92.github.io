@@ -235,6 +235,19 @@ export const appliedProjects = [
     ],
   },
   {
+    title: "DRISHTI: multimodal remote sensing",
+    meta: "Overall Champions · IIT Kharagpur Contingent · Inter IIT Tech Meet 14.0",
+    description:
+      "Co-designed an ISRO GeoNLI system combining staged Qwen3-VL-8B LoRA SFT and DPO with SAM3-based grounding for captioning, visual question answering, counting, and area estimation across RGB, SAR, and infrared imagery.",
+    tags: ["vision-language models", "remote sensing", "multimodal"],
+    links: [
+      {
+        label: "Report",
+        href: "https://drive.google.com/file/d/1wV529gO1rOvvg5_gR5nNmlEWt_f33v0g/view?usp=sharing",
+      },
+    ],
+  },
+  {
     title: "Amazon ML Challenge 2025",
     meta: "40.8 SMAPE",
     description:
