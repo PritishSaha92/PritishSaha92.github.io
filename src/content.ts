@@ -129,7 +129,17 @@ export const researchProjects: ResearchProject[] = [
     image: "/images/research/grit-pipeline.png",
     imageAlt: "GRIT pipeline from LoRA update through K-FAC and Fisher reprojection",
     caption: "Rank-space curvature, preconditioning, and Fisher-guided reprojection.",
-    links: [{ label: "Preprint", href: "https://arxiv.org/abs/2601.00231" }],
+    links: [
+      { label: "Preprint", href: "https://arxiv.org/abs/2601.00231" },
+      {
+        label: "RAAPID article",
+        href: "https://www.raapidinc.com/labs/grit-geometry-aware-peft-kfac-fisher-rank-adaptation/",
+      },
+      {
+        label: "Patent",
+        href: "https://www.raapidinc.com/labs/geometric-reprojection-instruction-tuning-language-model/",
+      },
+    ],
   },
   {
     organization: "ICLR 2026 NFAM Workshop",
@@ -174,7 +184,13 @@ export const publications = [
     role: "First author",
     description:
       "Rank-space natural gradients for LoRA, Fisher-spectrum rank allocation, guarded compaction, and Triton/CUDA acceleration.",
-    links: [{ label: "Preprint", href: "https://arxiv.org/abs/2601.00231" }],
+    links: [
+      { label: "Preprint", href: "https://arxiv.org/abs/2601.00231" },
+      {
+        label: "RAAPID article",
+        href: "https://www.raapidinc.com/labs/grit-geometry-aware-peft-kfac-fisher-rank-adaptation/",
+      },
+    ],
   },
 ];
 
@@ -199,6 +215,16 @@ export const experiences = [
     place: "RAAPID INC · Prof. Amitava Das · Remote",
     description:
       "Architected GRIT and its Triton/CUDA stack, then rebuilt clinical NER evaluation and deterministic QC to 0.640 exact micro-F1 with zero subword fragments across 5,035 rows.",
+    links: [
+      {
+        label: "Research",
+        href: "https://www.raapidinc.com/labs/grit-geometry-aware-peft-kfac-fisher-rank-adaptation/",
+      },
+      {
+        label: "Patent",
+        href: "https://www.raapidinc.com/labs/geometric-reprojection-instruction-tuning-language-model/",
+      },
+    ],
   },
   {
     period: "May–Jul 2026",
