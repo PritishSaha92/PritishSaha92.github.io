@@ -7,7 +7,7 @@ function ResearchPage() {
       <PageHeader eyebrow="Research" title="Selected research">
         <p>
           Across these projects, I keep asking what information a model preserves, how that information shapes
-          learning and decisions, and how experience can be used more effectively.
+          learning and decisions, and how agents can adapt from limited data and feedback.
         </p>
       </PageHeader>
 

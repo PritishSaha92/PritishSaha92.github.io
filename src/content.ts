@@ -47,10 +47,10 @@ export const researchFocus = [
     tags: ["RL", "reasoning", "credit assignment"],
   },
   {
-    title: "Efficient learning from experience",
+    title: "Offline preparation for adaptive decisions",
     description:
-      "How off-policy agents can make better use of stored experience as their policies improve, especially when interaction or training is expensive.",
-    tags: ["off-policy RL", "experience reuse", "sample efficiency"],
+      "How agents can be prepared from fixed offline data to gather information, respond to feedback, and decide when to commit under uncertainty.",
+    tags: ["offline RL", "adaptive policies", "decision-making under uncertainty"],
   },
 ];
 
