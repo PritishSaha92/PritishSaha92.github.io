@@ -37,7 +37,7 @@ export const researchFocus = [
   {
     title: "State, memory, and model internals",
     description:
-      "How models encode predictive state, what memory retains, and how compact representations support reasoning and control.",
+      "How models encode predictive state, what memory retains, and whether compact representations remain useful as models or policies change.",
     tags: ["belief states", "representation analysis", "agent memory"],
   },
   {
@@ -47,9 +47,9 @@ export const researchFocus = [
     tags: ["RL", "reasoning", "credit assignment"],
   },
   {
-    title: "Offline preparation for adaptive decisions",
+    title: "Learning to adapt from costly feedback",
     description:
-      "How agents can be prepared from fixed offline data to gather information, respond to feedback, and decide when to commit under uncertainty.",
+      "How policies can be prepared before deployment to decide when information is worth acquiring and how to act on what it reveals.",
     tags: ["offline RL", "adaptive policies", "decision-making under uncertainty"],
   },
 ];
@@ -95,13 +95,13 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     organization: "MARS 4.0 · Cambridge AI Safety Hub · Prof. Fernando Rosas",
-    title: "Predictive-state geometry in transformers and RL agents",
+    title: "Predictive-state geometry and recurrent control",
     summary:
-      "Using analytically tractable transducer worlds, I study how models represent Bayesian predictive state and what changes when those representations are adapted for decision-making through reinforcement learning.",
+      "Using analytically tractable partially observed environments, I study how models represent Bayesian predictive state and what changes when those representations are trained for control.",
     bullets: [
       "Built hierarchical-HMM and ε-transducer environments with exact Bayesian filters and predictive geometry.",
       "Decoded fully observed Bayesian beliefs at R²=0.985–0.997 in four-layer transformer pilots trained for 100k updates, well above shuffled and untrained controls.",
-      "Added exact KL-regularized POMDP solvers and reward-switch assays to connect predictive representations with control under changing objectives.",
+      "Extending the framework to recurrent control to study what predictive memory is retained through reward training and what becomes easier for a policy to use.",
     ],
     tags: ["predictive state", "partially observable RL", "representation analysis"],
     image: "/images/research/mars-observation-regimes.png",
@@ -200,7 +200,7 @@ export const experiences = [
     title: "MARS 4.0 Fellow",
     place: "Cambridge AI Safety Hub · Prof. Fernando Rosas · Hybrid",
     description:
-      "Studying predictive-state geometry in transformer world models and whether those representations remain reusable under reinforcement learning.",
+      "Studying belief-state geometry in transformers and how reinforcement learning changes what recurrent predictive representations retain and make accessible for control.",
   },
   {
     period: "Jul 2025–May 2026",
@@ -262,7 +262,7 @@ export const appliedProjects = [
   },
   {
     title: "DRISHTI: multimodal remote sensing",
-    meta: "Overall Champions · IIT Kharagpur Contingent · Inter IIT Tech Meet 14.0",
+    meta: "4th Place · ISRO GeoNLI · Inter IIT Tech Meet 14.0",
     description:
       "Co-designed an ISRO GeoNLI system combining staged Qwen3-VL-8B LoRA SFT and DPO with SAM3-based grounding for captioning, visual question answering, counting, and area estimation across RGB, SAR, and infrared imagery.",
     tags: ["vision-language models", "remote sensing", "multimodal"],

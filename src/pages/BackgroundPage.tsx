@@ -13,8 +13,8 @@ function BackgroundPage() {
           <SectionTitle icon="◇">Education</SectionTitle>
           <h2 className="education-title">Indian Institute of Technology, Kharagpur</h2>
           <p>
-            B.Tech. (Hons.) in Manufacturing Science and Engineering and M.Tech. in Industrial Engineering and
-            Management. Expected May 2027.
+            B.Tech. in Manufacturing Science and Engineering and M.Tech. in Industrial and Systems Engineering.
+            Expected May 2027.
           </p>
           <p className="muted-text">
             Coursework and self-study include operations research, probability and statistics, linear algebra,
