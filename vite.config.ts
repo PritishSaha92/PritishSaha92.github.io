@@ -6,8 +6,16 @@ export default defineConfig({
   base: "/",
   server: {
     fs: {
-      // Research drafts and local audit artifacts are never served by the dev server.
-      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "**/Work/**", "**/.preview/**"],
+      // Research drafts, course materials, and local audit artifacts are never served by the dev server.
+      deny: [
+        ".env",
+        ".env.*",
+        "*.{crt,pem}",
+        "**/.git/**",
+        "**/Work/**",
+        "**/Safe Gen AI/**",
+        "**/.preview/**",
+      ],
     },
   },
 });

@@ -56,7 +56,15 @@ function BackgroundPage() {
           </div>
           <p className="dp-muted">
             Coursework and self-study include operations research, probability and statistics, linear algebra,
-            Stanford CS229 and CS230, LLM agents, and generative AI safety.
+            Stanford CS229 and CS230, and LLM agents.
+          </p>
+          <p className="dp-muted">
+            I also took{" "}
+            <a href="https://sites.google.com/view/safegen2026" target="_blank" rel="noreferrer">
+              Safety Fundamentals of Generative AI (CS60216)
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            , with assignments on alignment, model merging, and causal tracing.
           </p>
         </div>
       </section>

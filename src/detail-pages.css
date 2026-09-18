@@ -347,6 +347,10 @@
   color: var(--muted);
 }
 
+.dp-about-content p a {
+  text-decoration: underline;
+}
+
 .dp-interest-statement {
   margin-bottom: 1.2rem;
   color: var(--accent);
