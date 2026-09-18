@@ -64,7 +64,16 @@ function BackgroundPage() {
               Safety Fundamentals of Generative AI (CS60216)
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
-            , with assignments on alignment, model merging, and causal tracing.
+            , with{" "}
+            <a
+              href="https://github.com/PritishSaha92/SafeGenAI_Assignments"
+              target="_blank"
+              rel="noreferrer"
+            >
+              assignments
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>{" "}
+            on alignment, model merging, and causal tracing.
           </p>
         </div>
       </section>
