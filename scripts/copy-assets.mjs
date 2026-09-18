@@ -9,6 +9,8 @@ const publicAssets = [
   "images/favicon/android-chrome-192x192.png",
   "images/favicon/android-chrome-512x512.png",
   "images/research/pritish-saha-informal.jpg",
+  "images/research/pritish-saha-formal.jpg",
+  "images/research/axis-collector-ring.png",
   "images/research/mars-observation-regimes.png",
   "images/research/grit-pipeline.png",
   "images/research/moc-architecture.jpg",

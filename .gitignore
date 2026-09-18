@@ -5,6 +5,8 @@ images/InFormal_Pic_3.jpg
 images/research/_grit_candidates/
 node_modules/
 dist/
+.preview/
+/Work/
 .vite/
 npm-debug.log*
 *.tsbuildinfo

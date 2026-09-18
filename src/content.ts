@@ -3,22 +3,14 @@ export type LinkItem = {
   href: string;
 };
 
-export type ResearchProject = {
-  organization: string;
-  title: string;
-  summary: string;
-  bullets: string[];
-  tags: string[];
-  image?: string;
-  imageAlt?: string;
-  caption?: string;
-  result?: { label: string; value: string }[];
-  links: LinkItem[];
-};
+export { researchFocus, researchProjects, currentResearch } from "./research-content";
+export type { ResearchProject } from "./research-content";
+
+export const contactEmail = "pritish171@gmail.com";
 
 export const profileLinks: LinkItem[] = [
   { label: "CV", href: "/#/cv" },
-  { label: "Email", href: "mailto:pritish.saha@kgpian.iitkgp.ac.in" },
+  { label: "Email", href: `mailto:${contactEmail}` },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/pritish-saha-436a1922a/" },
   { label: "GitHub", href: "https://github.com/PritishSaha92" },
   { label: "Scholar", href: "https://scholar.google.com/citations?user=gmXhzpMAAAAJ&hl=en" },
@@ -33,134 +25,23 @@ export const interests = [
   "Efficient learning & adaptation",
 ];
 
-export const researchFocus = [
-  {
-    title: "State, memory, and model internals",
-    description:
-      "How models encode predictive state, what memory retains, and whether compact representations remain useful as models or policies change.",
-    tags: ["belief states", "representation analysis", "agent memory"],
-  },
-  {
-    title: "Reinforcement learning for reasoning",
-    description:
-      "How latent signals can provide credit beyond outcome rewards, and why predictivity alone may not be enough to change a policy.",
-    tags: ["RL", "reasoning", "credit assignment"],
-  },
-  {
-    title: "Learning to adapt from costly feedback",
-    description:
-      "How policies can be prepared before deployment to decide when information is worth acquiring and how to act on what it reveals.",
-    tags: ["offline RL", "adaptive policies", "decision-making under uncertainty"],
-  },
-];
-
 export const updates = [
-  { date: "Jul 2026", text: "Completed a research internship at RAAPID INC on geometry-aware PEFT and clinical NLP." },
-  { date: "May 2026", text: "Completed the main LaViDA evaluation for my bachelor thesis at IIT Kharagpur." },
-  { date: "Mar 2026", text: "Mixture of Chapters accepted at the ICLR 2026 NFAM Workshop." },
-  { date: "Jan 2026", text: "Released the first-author GRIT arXiv preprint." },
-  { date: "Dec 2025", text: "Joined MARS 4.0 at the Cambridge AI Safety Hub." },
-];
-
-export const metrics = [
   {
-    value: "+4.70pp",
-    text: "seed-0 Oracle-augmented nearest-MSE arm over GRPO (MATH-500, n=8)",
+    date: "Sep 2026",
+    dateTime: "2026-09",
+    text: "I’m preparing a paper from my bachelor’s thesis on learning signals for mathematical reasoning.",
   },
   {
-    value: "R² 0.985–0.997",
-    text: "fully observed Bayesian beliefs decoded in four-layer transformer pilots",
-  },
-  { value: "262K", text: "learned memory tokens with chapter routing" },
-  { value: "32%", text: "smaller exported GRIT adapter at <0.04pp accuracy loss" },
-];
-
-export const researchProjects: ResearchProject[] = [
-  {
-    organization: "Complex Networks Research Group (CNeRG) · IIT Kharagpur",
-    title: "LaViDA: representation-level credit for mathematical reasoning",
-    summary:
-      "LaViDA studies whether latent representations can provide useful credit beyond exact-match rewards in GRPO. The broader question is how a predictive signal becomes a training signal that changes the model's policy.",
-    bullets: [
-      "Built Qwen2.5-Math-7B GRPO training with LoRA-r64, vLLM, and FlashAttention on a single H100, using 8,963 self traces and 3,354 filtered Oracle traces.",
-      "In a seed-0 comparison, the Oracle-augmented nearest-MSE arm improved n=8 mean correctness by +4.70pp over GRPO. Because its reference data and training route also differed, I treat this as an arm-level comparison rather than evidence for the objective alone.",
-      "An oracle-conditioned audit distinguished successful from unsuccessful rollouts, but the latent signal barely changed normalized credit and provided no learning signal when every sampled answer was wrong.",
-    ],
-    tags: ["reinforcement learning", "reasoning", "credit assignment"],
-    result: [
-      { label: "GRPO", value: "74.88%" },
-      { label: "Nearest-MSE", value: "79.57%" },
-    ],
-    links: [{ label: "BTP slides", href: "/data/BTP2_ppt.pdf" }],
+    date: "Jul 2026",
+    dateTime: "2026-07",
+    text: "I finished my internships at RAAPID INC and Axis Bank, where I worked on fine-tuning, clinical NLP, and transaction graphs.",
   },
   {
-    organization: "MARS 4.0 · Cambridge AI Safety Hub · Prof. Fernando Rosas",
-    title: "Predictive-state geometry and recurrent control",
-    summary:
-      "Using analytically tractable partially observed environments, I study how models represent Bayesian predictive state and what changes when those representations are trained for control.",
-    bullets: [
-      "Built hierarchical-HMM and ε-transducer environments with exact Bayesian filters and predictive geometry.",
-      "Decoded fully observed Bayesian beliefs at R²=0.985–0.997 in four-layer transformer pilots trained for 100k updates, well above shuffled and untrained controls.",
-      "Extending the framework to recurrent control to study what predictive memory is retained through reward training and what becomes easier for a policy to use.",
-    ],
-    tags: ["predictive state", "partially observable RL", "representation analysis"],
-    image: "/images/research/mars-observation-regimes.png",
-    imageAlt: "Analytical belief manifolds under three observation regimes",
-    caption: "Analytical belief geometry under fully observed and coarse-grained regimes.",
-    links: [
-      {
-        label: "Week-one MARS presentation",
-        href: "https://drive.google.com/file/d/1e1NrSwDkh5JacG8v2lmQSzG7bedZAJMd/view?usp=sharing",
-      },
-    ],
+    date: "Mar 2026",
+    dateTime: "2026-03",
+    text: "Our paper, Mixture of Chapters, was accepted at the ICLR 2026 NFAM Workshop.",
   },
-  {
-    organization: "RAAPID INC · Prof. Amitava Das · arXiv preprint",
-    title: "GRIT: geometry-aware PEFT",
-    summary:
-      "GRIT treats adapter updates as a geometric object using rank-space K-FAC, Fisher-guided reprojection, dynamic rank adaptation, and guarded high-rank-to-low-rank compression.",
-    bullets: [
-      "Authored fused Triton kernels for covariance fusion, GPU-side Cholesky inversion, and batched preconditioning.",
-      "Built asynchronous CUDA streams that overlap K-FAC inversions and eigensolves with training across 60+ LoRA modules.",
-      "On GSM8K with Llama-3.1-8B, GRIT reached 66.19% versus 63.38% for LoRA with a 27.8% smaller effective active update footprint.",
-      "The exported adapter was 32% smaller with less than 0.04 percentage points of accuracy loss.",
-    ],
-    tags: ["PEFT", "optimization", "GPU systems"],
-    image: "/images/research/grit-pipeline.png",
-    imageAlt: "GRIT pipeline from LoRA update through K-FAC and Fisher reprojection",
-    caption: "Rank-space curvature, preconditioning, and Fisher-guided reprojection.",
-    links: [
-      { label: "Preprint", href: "https://arxiv.org/abs/2601.00231" },
-      {
-        label: "RAAPID article",
-        href: "https://www.raapidinc.com/labs/grit-geometry-aware-peft-kfac-fisher-rank-adaptation/",
-      },
-      {
-        label: "Patent",
-        href: "https://www.raapidinc.com/labs/geometric-reprojection-instruction-tuning-language-model/",
-      },
-    ],
-  },
-  {
-    organization: "ICLR 2026 NFAM Workshop",
-    title: "Mixture of Chapters: learned memory in transformers",
-    summary:
-      "Mixture of Chapters adds a learned memory bank that transformer layers query through cross-attention, with sparse chapter routing to scale beyond dense memory access.",
-    bullets: [
-      "Scales to 262,208 learned memory tokens with 4,097 chapters and sparse top-k routing.",
-      "Outperforms iso-FLOP vanilla transformer baselines during pretraining.",
-      "Retains information better under heavy instruction fine-tuning.",
-    ],
-    tags: ["learned memory", "transformers", "efficient systems"],
-    image: "/images/research/moc-architecture.jpg",
-    imageAlt: "Mixture of Chapters architecture",
-    caption: "Chapter-routed memory cross-attention.",
-    links: [
-      { label: "Paper", href: "https://arxiv.org/abs/2603.21096" },
-      { label: "OpenReview", href: "https://openreview.net/forum?id=uwnwGYICWe" },
-      { label: "Code", href: "https://github.com/Tasmay-Tibrewal/Memory" },
-    ],
-  },
+  { date: "Jan 2026", dateTime: "2026-01", text: "Our GRIT preprint is on arXiv. I’m the first author." },
 ];
 
 export const publications = [
@@ -170,7 +51,7 @@ export const publications = [
     venue: "ICLR 2026 NFAM Workshop",
     role: "Co-author",
     description:
-      "Sparse learned memory banks, chapter routing, 262K latent memory tokens, and improved retention during instruction fine-tuning.",
+      "We use sparse chapter routing to let transformers query a much larger learned memory bank, and study how well they retain knowledge after instruction fine-tuning.",
     links: [
       { label: "Paper", href: "https://arxiv.org/abs/2603.21096" },
       { label: "OpenReview", href: "https://openreview.net/forum?id=uwnwGYICWe" },
@@ -179,11 +60,12 @@ export const publications = [
   },
   {
     year: "2026",
-    title: "GRIT: Geometry-Aware PEFT with K-FAC Preconditioning, Fisher-Guided Reprojection, and Dynamic Rank Adaptation",
+    title:
+      "GRIT: Geometry-Aware PEFT with K-FAC Preconditioning, Fisher-Guided Reprojection, and Dynamic Rank Adaptation",
     venue: "arXiv preprint",
     role: "First author",
     description:
-      "Rank-space natural gradients for LoRA, Fisher-spectrum rank allocation, guarded compaction, and Triton/CUDA acceleration.",
+      "GRIT uses curvature information to guide low-rank updates and allocate adapter capacity during fine-tuning.",
     links: [
       { label: "Preprint", href: "https://arxiv.org/abs/2601.00231" },
       {
@@ -200,28 +82,28 @@ export const experiences = [
     title: "MARS 4.0 Fellow",
     place: "Cambridge AI Safety Hub · Prof. Fernando Rosas · Hybrid",
     description:
-      "Studying belief-state geometry in transformers and how reinforcement learning changes what recurrent predictive representations retain and make accessible for control.",
+      "I study how transformers represent predictive state, using environments where the correct Bayesian beliefs can be computed exactly.",
   },
   {
     period: "Jul 2025–May 2026",
     title: "Research Intern",
     place: "Complex Networks Research Group (CNeRG), IIT Kharagpur · Prof. Pawan Goyal",
     description:
-      "Built and evaluated LaViDA, studying when latent representation signals translate into useful credit for GRPO-trained mathematical reasoning models.",
+      "I built and evaluated LaViDA to test whether hidden-state information can help mathematical-reasoning models learn with GRPO.",
   },
   {
     period: "Mar 2025–Jul 2026",
     title: "Research Intern",
     place: "RAAPID INC · Prof. Amitava Das · Remote",
     description:
-      "Architected GRIT and its Triton/CUDA stack, then rebuilt clinical NER evaluation and deterministic QC to 0.640 exact micro-F1 with zero subword fragments across 5,035 rows.",
+      "I developed GRIT for parameter-efficient fine-tuning. I also worked on clinical named-entity recognition, rebuilding the evaluation pipeline and adding checks for malformed outputs and incorrect text spans.",
     links: [
       {
         label: "Research",
         href: "https://www.raapidinc.com/labs/grit-geometry-aware-peft-kfac-fisher-rank-adaptation/",
       },
       {
-        label: "Patent",
+        label: "Technical disclosure",
         href: "https://www.raapidinc.com/labs/geometric-reprojection-instruction-tuning-language-model/",
       },
     ],
@@ -231,11 +113,10 @@ export const experiences = [
     title: "Data Science Intern",
     place: "Axis Bank, Business Intelligence Unit · Mumbai",
     description:
-      "Built a temporally valid graph pipeline over 224.8M accounts and 1.31B transfers for explainable loan-fraud review.",
+      "I built a transaction-graph pipeline to help analysts review suspected loan fraud, working with 224.8M accounts and 1.31B transfers. I evaluated it on monthly cohorts; without fraud-confirmation dates, those results don’t establish how it would perform in live use.",
     bullets: [
-      "Pruned the graph roughly 20× while retaining about 80% applicant coverage.",
-      "The review queue's top 1% achieved 5.49× mean lift across three monthly cohorts.",
-      "A separate scorecard indicated a feature ceiling rather than a model ceiling.",
+      "Reduced the graph to roughly one-twentieth of its size while retaining about 80% applicant coverage.",
+      "The top 1% of the review queue achieved 5.49× mean lift across three monthly cohorts.",
     ],
     links: [
       {
@@ -251,7 +132,7 @@ export const appliedProjects = [
     title: "GenAI analytics dashboard",
     meta: "3rd Place · General Championship Data Analytics, IIT Kharagpur",
     description:
-      "Captained a full-stack NLQ analytics dashboard for Frammer AI with LangGraph, self-healing SQL, KPI analysis, and synthetic star-schema evaluation.",
+      "I led Patel Hall’s team in building a dashboard for asking questions about data in plain language. It generates and repairs SQL and helps identify useful business metrics. We evaluated it on synthetic data.",
     tags: ["LangGraph", "FastAPI", "analytics"],
     links: [
       {
@@ -264,7 +145,7 @@ export const appliedProjects = [
     title: "DRISHTI: multimodal remote sensing",
     meta: "4th Place · ISRO GeoNLI · Inter IIT Tech Meet 14.0",
     description:
-      "Co-designed an ISRO GeoNLI system combining staged Qwen3-VL-8B LoRA SFT and DPO with SAM3-based grounding for captioning, visual question answering, counting, and area estimation across RGB, SAR, and infrared imagery.",
+      "I worked with the team on DRISHTI, a competition prototype for answering questions about RGB, SAR, and infrared imagery. It combines vision-language models with SAM3-based grounding for tasks such as captioning, counting, and estimating area.",
     tags: ["vision-language models", "remote sensing", "multimodal"],
     links: [
       {
@@ -275,21 +156,19 @@ export const appliedProjects = [
   },
   {
     title: "Amazon ML Challenge 2025",
-    meta: "40.8 SMAPE",
+    meta: "Multimodal price prediction",
     description:
-      "Stacked Qwen2.5-VL-3B SFT with LightGBM over CLIP and text features using WebDataset, 4-bit QLoRA, Pseudo-Huber loss, and monotonic constraints.",
-    tags: ["multimodal", "LightGBM", "QLoRA"],
+      "I designed a product-pricing pipeline that combines a vision-language model with boosted trees using image and text features. The design also covers model stacking and how to handle missing images.",
+    tags: ["multimodal", "LightGBM", "model design"],
     links: [{ label: "Code", href: "https://github.com/PritishSaha92/Amazon-ML-25" }],
   },
   {
     title: "American Express Campus Challenge",
     meta: "National Finalist · Decision Science Track",
     description:
-      "Built a three-stage GBDT-Transformer ranking ensemble with 3K+ temporally valid features and a listwise Transformer trained on GBDT residuals.",
+      "My team built an offer-ranking system using customer history, boosted trees, and a residual Transformer. We used point-in-time joins and kept customers separate between training and validation to limit leakage.",
     tags: ["ranking", "temporal ML", "ensembles"],
-    links: [
-      { label: "Code", href: "https://github.com/PritishSaha92/AmEX-Spacebar-Sketchers-2025" },
-    ],
+    links: [{ label: "Code", href: "https://github.com/PritishSaha92/AmEX-Spacebar-Sketchers-2025" }],
   },
 ];
 
