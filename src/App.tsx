@@ -187,9 +187,7 @@ function App() {
           </div>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} Pritish Saha</span>
-            <span>
-              Kharagpur, India <span aria-hidden="true">↗</span>
-            </span>
+            <span>Kharagpur, India</span>
             <a
               href="https://github.com/PritishSaha92/PritishSaha92.github.io"
               target="_blank"

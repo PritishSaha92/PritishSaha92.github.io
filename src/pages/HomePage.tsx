@@ -109,9 +109,6 @@ function HomePage() {
           </div>
           <figcaption>
             <span>IIT Kharagpur · Class of 2027</span>
-            <span className="portrait-caption-mark" aria-hidden="true">
-              ↳
-            </span>
           </figcaption>
         </figure>
       </section>
