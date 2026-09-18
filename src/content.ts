@@ -27,11 +27,6 @@ export const interests = [
 
 export const updates = [
   {
-    date: "Sep 2026",
-    dateTime: "2026-09",
-    text: "I’m preparing a paper from my bachelor’s thesis on learning signals for mathematical reasoning.",
-  },
-  {
     date: "Jul 2026",
     dateTime: "2026-07",
     text: "I finished my internships at RAAPID INC and Axis Bank, where I worked on fine-tuning, clinical NLP, and transaction graphs.",
