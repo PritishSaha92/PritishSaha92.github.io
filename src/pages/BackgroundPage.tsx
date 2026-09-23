@@ -87,7 +87,7 @@ function BackgroundPage() {
           <p>
             This question comes up in different forms across my work: learning to reason, representing a
             partially observed environment, and retaining knowledge during fine-tuning. I’m also interested in
-            when an agent should seek more information.
+            how agents coordinate decisions over time and when they should seek more information.
           </p>
         </div>
       </section>

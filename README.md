@@ -1,6 +1,6 @@
 ﻿# Pritish Saha — Portfolio
 
-A research portfolio built with React, TypeScript, and Vite. The homepage connects work on state and memory, reinforcement learning for reasoning, and adaptation from costly feedback. The design uses warm ivory, forest green, locally hosted DM Sans and Lora fonts, and original research figures.
+A research portfolio built with React, TypeScript, and Vite. The homepage connects work on state and memory, reinforcement learning for reasoning, and structured RL for coordinated decisions. The design uses warm ivory, forest green, locally hosted DM Sans and Lora fonts, and original research figures.
 
 ## Run locally
 
@@ -20,7 +20,7 @@ The build checks TypeScript, bundles the site, and copies an explicit list of po
 
 ## Editing the portfolio
 
-- `src/research-content.ts`: research themes, public project summaries, status, and a brief early-stage thesis note. Use stable project IDs for section links. Keep unpublished hypotheses, experiment protocols, and future proposals out of public source files.
+- `src/research-content.ts`: research themes, public project summaries, status, and a brief ongoing thesis note. Use stable project IDs for section links. Keep unpublished hypotheses, experiment protocols, and future proposals out of public source files.
 - `src/content.ts`: primary contact email, publications, experience, applied projects, tools, and dated updates; re-exports the research content. The footer and email links use the shared `contactEmail` value.
 - `src/pages/HomePage.tsx`: introduction, research focus, four selected research summaries, and recent updates. Keep these aligned with the detailed research entries.
 - `src/pages/BackgroundPage.tsx`: education, interests, grouped skills, and ongoing systems learning.

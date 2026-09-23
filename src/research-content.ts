@@ -40,11 +40,11 @@ export const researchFocus = [
     links: [{ label: "LaViDA / bachelor’s thesis", to: "/research#lavida" }],
   },
   {
-    title: "Learning to adapt from costly feedback",
-    question: "When is it worth finding out more?",
+    title: "Structure and coordination in RL",
+    question: "How can problem structure help an agent learn?",
     description:
-      "I’m interested in how agents learn when to seek more information, especially when feedback is costly and the right action is uncertain.",
-    tags: ["offline RL", "adaptive policies", "value of information"],
+      "I’m interested in how problem structure can help RL agents learn with limited training, especially when several decisions need to be coordinated.",
+    tags: ["structured RL", "coordinated control", "sequential decisions"],
     links: [{ label: "Current master’s thesis", to: "/research#mtp" }],
   },
 ];
@@ -52,8 +52,9 @@ export const researchFocus = [
 export const currentResearch = {
   id: "mtp",
   title: "Master’s thesis",
-  status: "Early-stage work · IIT Kharagpur",
-  description: "For my master’s thesis, I’m exploring how agents learn to adapt when feedback has a cost.",
+  status: "Ongoing research · IIT Kharagpur",
+  description:
+    "For my master’s thesis, I’m studying how reinforcement learning can use problem structure to coordinate decisions over time.",
 };
 
 export const researchProjects: ResearchProject[] = [
