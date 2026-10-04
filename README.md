@@ -1,6 +1,6 @@
 ﻿# Pritish Saha — Portfolio
 
-A research portfolio built with React, TypeScript, and Vite. The homepage connects work on state and memory, reinforcement learning for reasoning, and structured RL for coordinated decisions. The design uses warm ivory, forest green, locally hosted DM Sans and Lora fonts, and original research figures.
+A research portfolio built with React, TypeScript, and Vite. The homepage connects work on state and memory, reinforcement learning for reasoning, and structured RL for coordinated decisions under uncertainty. The design uses warm ivory, forest green, locally hosted DM Sans and Lora fonts, and original research figures.
 
 ## Run locally
 
@@ -42,4 +42,4 @@ Pushing `main` runs `.github/workflows/deploy.yml`, builds the Vite app, and pub
 
 The production site uses only its own origin for fonts, images, and documents. Research links and profile links lead to their original external sources. Local `.preview/` screenshots are ignored by Git and are not deployed.
 
-`Work/` and `Safe Gen AI/` contain local research and course materials and are ignored by Git. Nothing in the website imports or links to these folders. Vite also blocks direct development-server access to them and `.preview/`. The build copies only the public assets listed in `scripts/copy-assets.mjs`; unpublished drafts, execution logs, and proposals should remain outside `public/` and that list. Removing either local source folder does not affect the site.
+`Work/`, `MTP/`, and `Safe Gen AI/` are reserved for local research and course materials and are ignored by Git. Nothing in the website imports or links to these folders. Vite also blocks direct development-server access to them and `.preview/`. The build copies only the public assets listed in `scripts/copy-assets.mjs`; unpublished drafts, execution logs, and proposals should remain outside `public/` and that list. Removing these local source folders does not affect the site.

@@ -43,7 +43,7 @@ export const researchFocus = [
     title: "Structure and coordination in RL",
     question: "How can problem structure help an agent learn?",
     description:
-      "I’m interested in how problem structure can help RL agents learn with limited training, especially when several decisions need to be coordinated.",
+      "I’m interested in how RL agents use problem structure to coordinate decisions with limited data, and how uncertainty in their estimates should affect their choices.",
     tags: ["structured RL", "coordinated control", "sequential decisions"],
     links: [{ label: "Current master’s thesis", to: "/research#mtp" }],
   },
@@ -54,7 +54,7 @@ export const currentResearch = {
   title: "Master’s thesis",
   status: "Ongoing research · IIT Kharagpur",
   description:
-    "For my master’s thesis, I’m studying how reinforcement learning can use problem structure to coordinate decisions over time.",
+    "For my master’s thesis, I’m studying how RL agents coordinate decisions. My current focus is how they should choose actions when their value estimates are uncertain.",
 };
 
 export const researchProjects: ResearchProject[] = [

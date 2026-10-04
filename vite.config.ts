@@ -13,6 +13,7 @@ export default defineConfig({
         "*.{crt,pem}",
         "**/.git/**",
         "**/Work/**",
+        "**/MTP/**",
         "**/Safe Gen AI/**",
         "**/.preview/**",
       ],
