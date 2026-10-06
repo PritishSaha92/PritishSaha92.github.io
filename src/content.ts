@@ -110,8 +110,8 @@ export const experiences = [
     description:
       "I built a transaction-graph pipeline to help analysts review suspected loan fraud, working with 224.8M accounts and 1.31B transfers. I evaluated it on monthly cohorts; without fraud-confirmation dates, those results don’t establish how it would perform in live use.",
     bullets: [
-      "Reduced the graph to roughly one-twentieth of its size while retaining about 80% applicant coverage.",
-      "The top 1% of the review queue achieved 5.49× mean lift across three monthly cohorts.",
+      "Built a 3.22M-node scope graph connecting about 80% of September candidate accounts.",
+      "The top 1% of the review queue achieved 5.49× mean lift across three retrospective monthly cohorts.",
     ],
     links: [
       {
