@@ -54,7 +54,7 @@ export const currentResearch = {
   title: "Master’s thesis",
   status: "Ongoing research · IIT Kharagpur",
   description:
-    "For my master’s thesis, I’m studying how RL agents coordinate decisions. My current focus is how they should choose actions when their value estimates are uncertain.",
+    "For my master’s thesis, I’m studying how problem structure can help RL agents coordinate decisions over time, using maintenance planning as a test case.",
 };
 
 export const researchProjects: ResearchProject[] = [
