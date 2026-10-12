@@ -33,9 +33,9 @@ export const researchFocus = [
   },
   {
     title: "Reinforcement learning for reasoning",
-    question: "When does a signal become useful credit?",
+    question: "What makes a signal useful for reasoning?",
     description:
-      "I study whether a model’s hidden states can provide useful learning signals beyond a right or wrong final answer.",
+      "I study whether a model’s hidden states can provide useful learning signals beyond a right or wrong final answer. I’m also interested in how to guide its reasoning and test whether that guidance improves its answers.",
     tags: ["RL", "reasoning", "credit assignment"],
     links: [{ label: "LaViDA / bachelor’s thesis", to: "/research#lavida" }],
   },
