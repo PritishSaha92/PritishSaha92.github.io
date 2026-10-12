@@ -18,14 +18,14 @@ function ResearchPage() {
         <ul>
           {researchProjects.map((project, index) => (
             <li key={project.id}>
-              <Link to={`/research#${project.id}`}>
+              <Link to={`/research/#${project.id}`}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 {project.shortTitle}
               </Link>
             </li>
           ))}
           <li>
-            <Link to={`/research#${currentResearch.id}`}>
+            <Link to={`/research/#${currentResearch.id}`}>
               Current thesis <ArrowIcon direction="down" />
             </Link>
           </li>
@@ -112,7 +112,7 @@ function ResearchPage() {
 
       <div className="dp-page-end">
         <p>Papers and code from this work.</p>
-        <Link className="text-link" to="/publications">
+        <Link className="text-link" to="/publications/">
           View publications <ArrowIcon direction="right" />
         </Link>
       </div>

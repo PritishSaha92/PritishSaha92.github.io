@@ -27,8 +27,8 @@ export const researchFocus = [
       "I’m interested in what RL agents learn to remember, how they use that memory to make decisions, and whether it stays useful as tasks change.",
     tags: ["belief states", "representation analysis", "agent memory"],
     links: [
-      { label: "MARS", to: "/research#predictive-state" },
-      { label: "Mixture of Chapters", to: "/research#mixture-of-chapters" },
+      { label: "MARS", to: "/research/#predictive-state" },
+      { label: "Mixture of Chapters", to: "/research/#mixture-of-chapters" },
     ],
   },
   {
@@ -37,7 +37,7 @@ export const researchFocus = [
     description:
       "I study whether a model’s hidden states can provide useful learning signals beyond a right or wrong final answer. I’m also interested in how to guide its reasoning and test whether that guidance improves its answers.",
     tags: ["RL", "reasoning", "credit assignment"],
-    links: [{ label: "LaViDA / bachelor’s thesis", to: "/research#lavida" }],
+    links: [{ label: "LaViDA / bachelor’s thesis", to: "/research/#lavida" }],
   },
   {
     title: "Structure and coordination in RL",
@@ -45,7 +45,7 @@ export const researchFocus = [
     description:
       "I’m interested in how RL agents use problem structure to coordinate decisions with limited data, and how uncertainty in their estimates should affect their choices.",
     tags: ["structured RL", "coordinated control", "sequential decisions"],
-    links: [{ label: "Current master’s thesis", to: "/research#mtp" }],
+    links: [{ label: "Current master’s thesis", to: "/research/#mtp" }],
   },
 ];
 

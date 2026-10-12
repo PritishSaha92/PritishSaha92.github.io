@@ -1,8 +1,10 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
+import { pagesPreview } from "./scripts/pages-preview.mjs";
 
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(({ isPreview }) => ({
+  appType: isPreview ? "mpa" : "spa",
+  plugins: [react(), pagesPreview() as Plugin],
   base: "/",
   server: {
     fs: {
@@ -19,4 +21,4 @@ export default defineConfig({
       ],
     },
   },
-});
+}));

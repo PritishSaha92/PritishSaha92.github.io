@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { LinkItem } from "./content";
+import { findPage } from "./site-metadata";
 
 export function ArrowIcon({ direction = "up-right" }: { direction?: "up-right" | "right" | "down" }) {
   return (
@@ -54,9 +55,9 @@ export function LinkRow({ links }: { links: LinkItem[] }) {
   return (
     <div className="link-row">
       {links.map((link) => {
-        if (link.href.startsWith("/#/")) {
+        if (findPage(link.href.split(/[?#]/)[0])) {
           return (
-            <Link className="link-chip" key={link.href} to={link.href.replace("/#", "")}>
+            <Link className="link-chip" key={link.href} to={link.href}>
               {link.label}
               <ArrowIcon direction="right" />
             </Link>

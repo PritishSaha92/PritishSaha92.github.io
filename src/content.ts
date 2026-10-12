@@ -9,7 +9,7 @@ export type { ResearchProject } from "./research-content";
 export const contactEmail = "pritish171@gmail.com";
 
 export const profileLinks: LinkItem[] = [
-  { label: "CV", href: "/#/cv" },
+  { label: "CV", href: "/cv/" },
   { label: "Email", href: `mailto:${contactEmail}` },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/pritish-saha-436a1922a/" },
   { label: "GitHub", href: "https://github.com/PritishSaha92" },

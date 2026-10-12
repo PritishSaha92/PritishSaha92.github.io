@@ -1015,20 +1015,34 @@ svg {
   .nav-inner {
     min-height: 70px;
   }
-  .menu-button {
+  .is-interactive .menu-button {
     display: inline-flex;
   }
   .site-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    padding: 15px 20px 20px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-shell:not(.is-interactive) .nav-inner {
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+  .site-shell:not(.is-interactive) .site-navbar {
+    position: static;
+  }
+  .is-interactive .site-navigation {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    padding: 15px 20px 20px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
   }
-  .site-navigation.is-open {
+  .is-interactive .site-navigation.is-open {
     display: flex;
     flex-direction: column;
     align-items: stretch;

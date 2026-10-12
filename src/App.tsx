@@ -2,6 +2,7 @@ import { type MouseEvent, useEffect, useRef, useState } from "react";
 import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { ArrowIcon } from "./components";
 import { contactEmail } from "./content";
+import { updatePageMetadata } from "./site-metadata";
 import BackgroundPage from "./pages/BackgroundPage";
 import CvPage from "./pages/CvPage";
 import ExperiencePage from "./pages/ExperiencePage";
@@ -11,35 +12,31 @@ import PublicationsPage from "./pages/PublicationsPage";
 import ResearchPage from "./pages/ResearchPage";
 
 const navigation = [
-  { to: "/research", label: "Research" },
-  { to: "/projects", label: "Projects" },
-  { to: "/experience", label: "Experience" },
-  { to: "/background", label: "About" },
+  { to: "/research/", label: "Research" },
+  { to: "/projects/", label: "Projects" },
+  { to: "/experience/", label: "Experience" },
+  { to: "/background/", label: "About" },
 ];
-const pageTitles: Record<string, string> = {
-  "/": "Pritish Saha — Machine learning & research",
-  "/research": "Research · Pritish Saha",
-  "/publications": "Publications · Pritish Saha",
-  "/experience": "Experience · Pritish Saha",
-  "/projects": "Projects · Pritish Saha",
-  "/background": "About · Pritish Saha",
-  "/cv": "CV · Pritish Saha",
-};
 function focusMainContent(event: MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
   document.getElementById("main-content")?.focus();
 }
 
-function App() {
+function App({ copyrightYear }: { copyrightYear: number }) {
   const location = useLocation();
+  const [interactive, setInteractive] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLButtonElement>(null);
   const previousPath = useRef(location.pathname);
 
   useEffect(() => {
+    setInteractive(true);
+  }, []);
+
+  useEffect(() => {
     setMenuOpen(false);
-    document.title = pageTitles[location.pathname] ?? "Page not found · Pritish Saha";
+    updatePageMetadata(location.pathname);
     let cancelled = false;
     const pathChanged = previousPath.current !== location.pathname;
     const anchor = location.hash.slice(1);
@@ -82,13 +79,13 @@ function App() {
   }, [menuOpen]);
 
   return (
-    <div className="site-shell">
+    <div className={`site-shell${interactive ? " is-interactive" : ""}`}>
       <a className="skip-link" href="#main-content" onClick={focusMainContent}>
         Skip to content
       </a>
       <header className="site-navbar" ref={headerRef}>
         <div className="container nav-inner">
-          <NavLink className="site-brand" to="/" aria-label="Pritish Saha home">
+          <NavLink className="site-brand" to="/" end caseSensitive aria-label="Pritish Saha home">
             Pritish Saha
           </NavLink>
           <button
@@ -109,6 +106,8 @@ function App() {
           >
             {navigation.map((item) => (
               <NavLink
+                end
+                caseSensitive
                 key={item.to}
                 to={item.to}
                 onClick={() => setMenuOpen(false)}
@@ -117,7 +116,7 @@ function App() {
                 {item.label}
               </NavLink>
             ))}
-            <NavLink className="nav-cv" to="/cv" onClick={() => setMenuOpen(false)}>
+            <NavLink className="nav-cv" to="/cv/" end caseSensitive onClick={() => setMenuOpen(false)}>
               View CV <ArrowIcon />
             </NavLink>
           </nav>
@@ -126,13 +125,13 @@ function App() {
       <main id="main-content" className="site-main" tabIndex={-1}>
         <div className="container">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/research" element={<ResearchPage />} />
-            <Route path="/publications" element={<PublicationsPage />} />
-            <Route path="/experience" element={<ExperiencePage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/background" element={<BackgroundPage />} />
-            <Route path="/cv" element={<CvPage />} />
+            <Route caseSensitive path="/" element={<HomePage />} />
+            <Route caseSensitive path="/research" element={<ResearchPage />} />
+            <Route caseSensitive path="/publications" element={<PublicationsPage />} />
+            <Route caseSensitive path="/experience" element={<ExperiencePage />} />
+            <Route caseSensitive path="/projects" element={<ProjectsPage />} />
+            <Route caseSensitive path="/background" element={<BackgroundPage />} />
+            <Route caseSensitive path="/cv" element={<CvPage />} />
             <Route
               path="*"
               element={
@@ -180,13 +179,13 @@ function App() {
                 Google Scholar <ArrowIcon />
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
-              <Link to="/publications">
+              <Link to="/publications/">
                 Publications <ArrowIcon direction="right" />
               </Link>
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Pritish Saha</span>
+            <span>© {copyrightYear} Pritish Saha</span>
             <span>Kharagpur, India</span>
             <a
               href="https://github.com/PritishSaha92/PritishSaha92.github.io"

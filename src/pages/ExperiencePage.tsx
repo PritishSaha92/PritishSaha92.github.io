@@ -41,7 +41,7 @@ function ExperiencePage() {
 
       <div className="dp-page-end">
         <p>For the full list, see my CV.</p>
-        <Link className="text-link" to="/cv">
+        <Link className="text-link" to="/cv/">
           View my CV <ArrowIcon direction="right" />
         </Link>
       </div>

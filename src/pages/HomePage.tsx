@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { ArrowIcon, TagList } from "../components";
 import { researchFocus, updates } from "../content";
@@ -11,7 +12,7 @@ const selectedWork = [
     description:
       "For my bachelor’s thesis, I studied whether a model’s hidden states can help it learn to solve maths problems, beyond rewarding correct final answers.",
     result: "Thesis completed; paper in preparation.",
-    route: "/research#lavida",
+    route: "/research/#lavida",
     tags: ["RL for reasoning", "Credit assignment"],
     image: undefined,
     alt: undefined,
@@ -26,7 +27,7 @@ const selectedWork = [
     result: "Completed work includes analytical environments and transformer prediction pilots.",
     image: "/images/research/mars-observation-regimes.png",
     alt: "Exact belief geometry under different observation regimes",
-    route: "/research#predictive-state",
+    route: "/research/#predictive-state",
     tags: ["Belief states", "Memory reuse"],
   },
   {
@@ -39,7 +40,7 @@ const selectedWork = [
     result: "262K learned memory tokens, accessed through sparse routing.",
     image: "/images/research/moc-architecture.jpg",
     alt: "Mixture of Chapters architecture with memory cross-attention",
-    route: "/research#mixture-of-chapters",
+    route: "/research/#mixture-of-chapters",
     tags: ["Learned memory", "Transformers"],
   },
   {
@@ -52,12 +53,13 @@ const selectedWork = [
     result: "Rank-space K-FAC, Fisher-guided reprojection, and dynamic rank allocation.",
     image: "/images/research/grit-pipeline.png",
     alt: "GRIT pipeline with curvature-aware preconditioning and reprojection",
-    route: "/research#grit",
+    route: "/research/#grit",
     tags: ["PEFT", "Optimization geometry"],
   },
 ];
 
-function exploreResearch() {
+function exploreResearch(event: MouseEvent<HTMLAnchorElement>) {
+  event.preventDefault();
   const section = document.getElementById("research-focus");
   section?.scrollIntoView({
     behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
@@ -87,10 +89,10 @@ function HomePage() {
             information to make decisions.
           </p>
           <div className="hero-actions">
-            <button className="button" onClick={exploreResearch}>
+            <a className="button" href="#research-focus" onClick={exploreResearch}>
               Explore my research <ArrowIcon direction="down" />
-            </button>
-            <Link className="text-link" to="/cv">
+            </a>
+            <Link className="text-link" to="/cv/">
               View my CV <ArrowIcon />
             </Link>
           </div>
@@ -168,7 +170,7 @@ function HomePage() {
           <div>
             <h2 id="work-heading">Selected research</h2>
           </div>
-          <Link className="text-link" to="/research">
+          <Link className="text-link" to="/research/">
             Research in detail <ArrowIcon direction="right" />
           </Link>
         </div>
@@ -225,7 +227,7 @@ function HomePage() {
         </div>
         <div className="work-more">
           <p>I’ve also worked on transaction graphs, remote sensing, and analytics tools.</p>
-          <Link className="text-link" to="/projects">
+          <Link className="text-link" to="/projects/">
             Explore my projects <ArrowIcon direction="right" />
           </Link>
         </div>
@@ -236,7 +238,7 @@ function HomePage() {
           <div>
             <h2 id="notes-heading">Recent updates</h2>
           </div>
-          <Link className="text-link" to="/experience">
+          <Link className="text-link" to="/experience/">
             My experience <ArrowIcon direction="right" />
           </Link>
         </div>
