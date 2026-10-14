@@ -150,12 +150,18 @@ export const appliedProjects = [
     ],
   },
   {
-    title: "Amazon ML Challenge 2025",
-    meta: "Multimodal price prediction",
+    title: "Amazon ML Challenge 2026",
+    meta: "Business entity resolution",
     description:
-      "I designed a product-pricing pipeline that combines a vision-language model with boosted trees using image and text features. The design also covers model stacking and how to handle missing images.",
-    tags: ["multimodal", "LightGBM", "model design"],
-    links: [{ label: "Code", href: "https://github.com/PritishSaha92/Amazon-ML-25" }],
+      "My team built a system to match noisy business records across the US, India, and France. We combined multilingual retrieval, LightGBM, and cross-encoders, then resolved competing matches so each target record was assigned to at most one business. Our submission scored 0.990689 macro F0.5 on the public leaderboard.",
+    tags: ["multilingual retrieval", "LightGBM", "cross-encoders"],
+    links: [
+      { label: "Code", href: "https://github.com/PritishSaha92/Amazon-ML-26" },
+      {
+        label: "Solution report",
+        href: "https://github.com/PritishSaha92/Amazon-ML-26/blob/main/docs/SOLUTION.md",
+      },
+    ],
   },
   {
     title: "American Express Campus Challenge",

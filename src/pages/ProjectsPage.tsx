@@ -7,8 +7,8 @@ function ProjectsPage() {
     <>
       <PageHeader eyebrow="Selected projects" title="Applied machine learning">
         <p>
-          Team projects and competition work in natural-language analytics, remote sensing, ranking, and
-          multimodal prediction.
+          Team projects and competition work in natural-language analytics, remote sensing, entity resolution,
+          and ranking.
         </p>
       </PageHeader>
 

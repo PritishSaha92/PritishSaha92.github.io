@@ -17,7 +17,7 @@ export const pages = [
     path: "/projects/",
     title: "Projects · Pritish Saha",
     description:
-      "Selected projects by Pritish Saha in transaction graphs, remote sensing, machine learning, and analytics.",
+      "Selected projects by Pritish Saha in entity resolution, remote sensing, ranking, and natural-language analytics.",
   },
   {
     path: "/experience/",
