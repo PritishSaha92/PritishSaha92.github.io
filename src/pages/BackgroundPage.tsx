@@ -92,6 +92,22 @@ function BackgroundPage() {
         </div>
       </section>
 
+      <section className="dp-about-section" aria-labelledby="programmes-title">
+        <h2 className="dp-section-label" id="programmes-title">
+          Selected programmes
+        </h2>
+        <div className="dp-about-content">
+          <p>
+            <strong>YC Startup School India:</strong> Invited to attend; one of 2,000 students selected
+            from 25,000 applicants.
+          </p>
+          <p>
+            <strong>Founders Inc. Canopy:</strong> Selected to work on latent reasoning, reinforcement
+            learning and model architectures.
+          </p>
+        </div>
+      </section>
+
       <section className="dp-about-section" aria-labelledby="toolkit-title">
         <h2 className="dp-section-label" id="toolkit-title">
           Tools I work with
